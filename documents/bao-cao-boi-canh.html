@@ -1,0 +1,1879 @@
+<title>Hồ sơ bối cảnh — Anh Nguyễn Ocean Front Villas, Nha Trang</title>
+<meta name="description" content="Báo cáo bối cảnh doanh nghiệp phục vụ thiết kế hệ thống quản trị vận hành RMA">
+
+<style>
+/* ============ TOKENS: LIGHT (complete palette) ============ */
+:root {
+  color-scheme: light;
+
+  --plane:        #e9e7e1;
+  --surface:      #faf9f6;
+  --surface-2:    #f2f0ea;
+  --surface-sunk: #e3e0d8;
+
+  --ink:          #15181a;
+  --ink-2:        #4e534f;
+  --ink-3:        #83877f;
+
+  --rule:         #d9d6cd;
+  --rule-strong:  #bfbbb0;
+
+  --accent:       #0d5c68;
+  --accent-soft:  #d3e5e7;
+  --accent-ink:   #093f47;
+
+  /* data series — validated (see report methodology) */
+  --s1: #2a78d6;   /* blue   */
+  --s2: #eb6834;   /* orange */
+  --s3: #1baf7a;   /* aqua   */
+  --s4: #e34948;   /* red    */
+
+  /* status — fixed, never themed */
+  --st-good:     #0ca30c;
+  --st-warn:     #fab219;
+  --st-serious:  #ec835a;
+  --st-critical: #d03b3b;
+
+  --grid:     #e4e2da;
+  --baseline: #bfbbb0;
+
+  --shadow: 0 1px 2px rgba(21,24,26,.05), 0 8px 24px -12px rgba(21,24,26,.14);
+
+  --f-display: Georgia, "Times New Roman", "Nimbus Roman", serif;
+  --f-body: system-ui, -apple-system, "Segoe UI Variable Text", "Segoe UI", Roboto, sans-serif;
+  --f-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+
+  --measure: 74ch;
+}
+
+/* ============ TOKENS: DARK (OS setting) ============ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --plane:        #0e0f10;
+    --surface:      #191b1d;
+    --surface-2:    #212426;
+    --surface-sunk: #121415;
+
+    --ink:          #f2f1ec;
+    --ink-2:        #b9bcb6;
+    --ink-3:        #868a84;
+
+    --rule:         #2b2e30;
+    --rule-strong:  #3d4144;
+
+    --accent:       #6fc9d5;
+    --accent-soft:  #123c43;
+    --accent-ink:   #a5e0e8;
+
+    --s1: #3987e5;
+    --s2: #d95926;
+    --s3: #199e70;
+    --s4: #e66767;
+
+    --grid:     #26292b;
+    --baseline: #3d4144;
+
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+}
+
+/* ============ TOKENS: DARK (explicit toggle) ============ */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --plane:        #0e0f10;
+  --surface:      #191b1d;
+  --surface-2:    #212426;
+  --surface-sunk: #121415;
+
+  --ink:          #f2f1ec;
+  --ink-2:        #b9bcb6;
+  --ink-3:        #868a84;
+
+  --rule:         #2b2e30;
+  --rule-strong:  #3d4144;
+
+  --accent:       #6fc9d5;
+  --accent-soft:  #123c43;
+  --accent-ink:   #a5e0e8;
+
+  --s1: #3987e5;
+  --s2: #d95926;
+  --s3: #199e70;
+  --s4: #e66767;
+
+  --grid:     #26292b;
+  --baseline: #3d4144;
+
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+}
+
+/* ============ BASE ============ */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--plane);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 600; text-wrap: balance; margin: 0; }
+
+/* ============ SHELL ============ */
+.shell {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+@media (min-width: 1100px) {
+  .shell { grid-template-columns: 236px minmax(0, 1fr); gap: 40px; }
+}
+
+/* ============ HEADER ============ */
+.masthead {
+  grid-column: 1 / -1;
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+  border-bottom: 1px solid var(--rule);
+  padding: 56px 28px 40px;
+}
+@media (min-width: 760px) { .masthead { padding: 76px 56px 48px; } }
+
+.contours { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: .5; }
+.contours path { fill: none; stroke: var(--accent); stroke-width: 1; opacity: .16; }
+
+.masthead__inner { position: relative; max-width: 900px; }
+
+.eyebrow {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 18px;
+}
+
+.masthead h1 { font-size: clamp(30px, 4.6vw, 50px); line-height: 1.1; letter-spacing: -.015em; }
+
+.masthead__sub {
+  font-size: clamp(16px, 1.7vw, 19px);
+  color: var(--ink-2);
+  max-width: 62ch;
+  margin: 18px 0 0;
+}
+
+.metabar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 36px;
+  margin-top: 34px;
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
+}
+.metabar div { padding: 6px 0; }
+.metabar dt {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 3px;
+}
+.metabar dd { margin: 0; font-size: 14px; font-weight: 500; }
+
+/* ============ TOC RAIL ============ */
+.rail { display: none; }
+@media (min-width: 1100px) {
+  .rail {
+    display: block;
+    align-self: start;
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding: 40px 0 40px 28px;
+  }
+}
+.rail__title {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 12px;
+}
+.rail ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1px; }
+.rail a {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 8px;
+  padding: 5px 8px 5px 0;
+  font-size: 13.5px;
+  line-height: 1.35;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  padding-left: 10px;
+}
+.rail a:hover { color: var(--ink); background: var(--surface-2); }
+.rail a[aria-current="true"] { color: var(--accent); border-left-color: var(--accent); font-weight: 600; }
+.rail a span { font-family: var(--f-mono); font-size: 11px; color: var(--ink-3); padding-top: 2px; }
+
+/* ============ MAIN ============ */
+main { padding: 0 20px 100px; min-width: 0; }
+@media (min-width: 760px) { main { padding: 0 32px 120px; } }
+@media (min-width: 1100px) { main { padding: 0 28px 120px 0; } }
+
+section { padding-top: 64px; scroll-margin-top: 20px; }
+
+.sec-head { border-bottom: 2px solid var(--ink); padding-bottom: 10px; margin-bottom: 26px; }
+.sec-head__num {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: .12em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 6px;
+}
+.sec-head h2 { font-size: clamp(23px, 2.9vw, 31px); line-height: 1.2; letter-spacing: -.01em; }
+
+p, ul, ol { max-width: var(--measure); }
+p { margin: 0 0 16px; }
+main ul, main ol { margin: 0 0 18px; padding-left: 22px; }
+main li { margin-bottom: 7px; }
+
+h3 { font-size: 20px; margin: 34px 0 12px; }
+h4 { font-size: 16px; font-family: var(--f-body); font-weight: 650; margin: 24px 0 8px; }
+
+strong { font-weight: 650; }
+
+/* ============ RELIABILITY BADGE ============ */
+.lb {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: 3px;
+  border: 1px solid;
+  white-space: nowrap;
+  vertical-align: 1px;
+  font-weight: 600;
+}
+.lb--v { color: #0a6f0a; border-color: #0a6f0a55; background: #0ca30c14; }
+.lb--s { color: #9a6a00; border-color: #9a6a0055; background: #fab21918; }
+.lb--m { color: #a8462a; border-color: #a8462a55; background: #ec835a1a; }
+.lb--i { color: var(--ink-3); border-color: var(--rule-strong); background: var(--surface-2); }
+:root[data-theme="dark"] .lb--v, :root[data-theme="dark"] .lb--s, :root[data-theme="dark"] .lb--m { }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .lb--v { color: #4fce4f; border-color: #4fce4f55; background: #0ca30c1f; }
+  :root:not([data-theme="light"]) .lb--s { color: #f5c14e; border-color: #f5c14e55; background: #fab2191f; }
+  :root:not([data-theme="light"]) .lb--m { color: #f0a184; border-color: #f0a18455; background: #ec835a1f; }
+}
+:root[data-theme="dark"] .lb--v { color: #4fce4f; border-color: #4fce4f55; background: #0ca30c1f; }
+:root[data-theme="dark"] .lb--s { color: #f5c14e; border-color: #f5c14e55; background: #fab2191f; }
+:root[data-theme="dark"] .lb--m { color: #f0a184; border-color: #f0a18455; background: #ec835a1f; }
+
+/* ============ REFERENCE MARKER ============ */
+.ref {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  vertical-align: super;
+  line-height: 0;
+}
+.ref a {
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0 1px;
+  border-bottom: 1px dotted currentColor;
+}
+.ref a:hover { background: var(--accent-soft); }
+/* separate consecutive citation markers so [12][13] never reads as "1213" */
+.ref a + a::before { content: ","; color: var(--ink-3); border: 0; }
+
+/* ============ CARDS ============ */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 22px 24px;
+  box-shadow: var(--shadow);
+}
+.card > :last-child { margin-bottom: 0; }
+
+.cards { display: grid; gap: 16px; margin: 24px 0; }
+@media (min-width: 700px) { .cards--3 { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 700px) { .cards--2 { grid-template-columns: repeat(2, 1fr); } }
+
+.finding { position: relative; padding-left: 24px; }
+.finding::before {
+  content: "";
+  position: absolute; left: 0; top: 22px; bottom: 22px;
+  width: 4px; border-radius: 2px;
+}
+.finding--1::before { background: var(--st-critical); }
+.finding--2::before { background: var(--st-serious); }
+.finding--3::before { background: var(--st-critical); }
+.finding h3 { margin-top: 0; font-size: 17.5px; }
+.finding p { font-size: 14.5px; color: var(--ink-2); }
+.finding__n {
+  font-family: var(--f-mono);
+  font-size: 10px; letter-spacing: .1em;
+  color: var(--ink-3); display: block; margin-bottom: 6px;
+}
+
+/* ============ CALLOUT ============ */
+.callout {
+  border-left: 4px solid var(--accent);
+  background: var(--surface-2);
+  padding: 18px 22px;
+  margin: 24px 0;
+  border-radius: 0 4px 4px 0;
+}
+.callout--alert { border-left-color: var(--st-critical); }
+.callout--warn { border-left-color: var(--st-warn); }
+.callout__label {
+  font-family: var(--f-mono);
+  font-size: 10px; letter-spacing: .11em; text-transform: uppercase;
+  font-weight: 700; color: var(--ink-2);
+  display: block; margin-bottom: 7px;
+}
+.callout > :last-child { margin-bottom: 0; }
+.callout p { max-width: none; }
+
+/* ============ TABLES ============ */
+.tw { overflow-x: auto; margin: 22px 0; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+caption {
+  caption-side: top;
+  text-align: left;
+  padding: 14px 18px 12px;
+  font-size: 13px;
+  color: var(--ink-2);
+  border-bottom: 1px solid var(--rule);
+  background: var(--surface-2);
+}
+caption b { color: var(--ink); font-weight: 650; }
+th, td { padding: 9px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
+thead th {
+  font-family: var(--f-mono);
+  font-size: 10.5px; letter-spacing: .07em; text-transform: uppercase;
+  color: var(--ink-2); font-weight: 700;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--rule-strong);
+  white-space: nowrap;
+}
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: var(--surface-2); }
+.num { text-align: right; font-family: var(--f-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.neg { color: var(--st-critical); font-weight: 600; }
+td code, .mono { font-family: var(--f-mono); font-size: 12.5px; }
+
+/* ============ STATUS CHIP ============ */
+.chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 12px; font-weight: 650;
+  padding: 2px 8px 2px 6px; border-radius: 20px;
+  white-space: nowrap;
+  border: 1px solid;
+}
+.chip i { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.chip--crit { color: #9c2a2a; border-color: #d03b3b55; background: #d03b3b14; }
+.chip--crit i { background: var(--st-critical); }
+.chip--warn { color: #8a6100; border-color: #fab21966; background: #fab21918; }
+.chip--warn i { background: var(--st-warn); }
+.chip--ser { color: #a04a28; border-color: #ec835a66; background: #ec835a18; }
+.chip--ser i { background: var(--st-serious); }
+.chip--unk { color: var(--ink-2); border-color: var(--rule-strong); background: var(--surface-2); }
+.chip--unk i { background: var(--ink-3); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .chip--crit { color: #f08a8a; }
+  :root:not([data-theme="light"]) .chip--warn { color: #f5c14e; }
+  :root:not([data-theme="light"]) .chip--ser { color: #f0a184; }
+}
+:root[data-theme="dark"] .chip--crit { color: #f08a8a; }
+:root[data-theme="dark"] .chip--warn { color: #f5c14e; }
+:root[data-theme="dark"] .chip--ser { color: #f0a184; }
+
+/* ============ FIGURE / CHART ============ */
+figure { margin: 28px 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 20px 22px 16px; box-shadow: var(--shadow); }
+figure h4 { margin: 0 0 3px; font-size: 15.5px; font-weight: 650; }
+.fig-sub { font-size: 12.5px; color: var(--ink-2); margin: 0 0 16px; max-width: none; }
+figcaption { font-size: 12px; color: var(--ink-3); margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--rule); max-width: none; }
+.chart-wrap { overflow-x: auto; }
+.chart-wrap svg { display: block; min-width: 460px; width: 100%; height: auto; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 14px; padding: 0; list-style: none; }
+.legend li { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--ink-2); }
+.legend i { width: 11px; height: 11px; border-radius: 2px; flex: none; }
+
+/* ============ STAT TILES ============ */
+.stats { display: grid; gap: 14px; margin: 24px 0; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+.stat { background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 16px 18px; box-shadow: var(--shadow); }
+.stat__label { font-family: var(--f-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 8px; }
+.stat__value { font-size: 30px; font-weight: 600; line-height: 1.05; letter-spacing: -.02em; font-family: var(--f-display); }
+.stat__unit { font-size: 14px; color: var(--ink-2); font-family: var(--f-body); font-weight: 400; margin-left: 3px; }
+.stat__delta { font-size: 12.5px; margin-top: 7px; font-weight: 600; font-family: var(--f-mono); }
+.stat__delta--up { color: #006300; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .stat__delta--up { color: #4fce4f; } }
+:root[data-theme="dark"] .stat__delta--up { color: #4fce4f; }
+.stat__note { font-size: 12px; color: var(--ink-3); margin-top: 6px; }
+.stat--flag { border-color: var(--st-critical); border-width: 1px; }
+.stat--flag .stat__value { color: var(--st-critical); }
+
+/* ============ TIMELINE ============ */
+/* Geometry note — these values are interlocked, change them together:
+   list padding-left 4 + date column 62 + gap 30 => .tl__body starts at x=96.
+   Marker is 12px + 2px border = 16px wide; its centre must sit on the spine.
+   Spine at left:80 (80–82, centre 81) => marker left = 81 − 8 = 73 => −23px from body.
+   Date column ends at x=66, so the marker clears it by 7px and never clips the text. */
+.tl { list-style: none; margin: 26px 0; padding: 0 0 0 4px; position: relative; max-width: none; }
+.tl::before { content: ""; position: absolute; left: 80px; top: 8px; bottom: 8px; width: 2px; background: var(--rule); }
+.tl li { position: relative; display: grid; grid-template-columns: 62px 1fr; gap: 30px; margin-bottom: 22px; }
+.tl__date { font-family: var(--f-mono); font-size: 12px; font-weight: 700; color: var(--ink-2); text-align: right; padding-top: 2px; white-space: nowrap; }
+.tl__body { position: relative; }
+.tl__body::before {
+  content: ""; position: absolute; left: -23px; top: 5px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--surface); border: 2px solid var(--rule-strong);
+}
+/* Mobile: single column, body starts at x=34; marker 6–22, centre 14 => spine left:13 */
+@media (max-width: 640px) {
+  .tl::before { left: 13px; }
+  .tl li { grid-template-columns: 1fr; gap: 4px; padding-left: 30px; }
+  .tl__date { text-align: left; }
+  .tl__body::before { left: -28px; }
+}
+.tl li[data-kind="legal"] .tl__body::before { border-color: var(--s1); background: var(--s1); }
+.tl li[data-kind="adjust"] .tl__body::before { border-color: var(--st-warn); background: var(--st-warn); }
+.tl li[data-kind="violation"] .tl__body::before { border-color: var(--st-critical); background: var(--st-critical); }
+.tl li[data-kind="commerce"] .tl__body::before { border-color: var(--s3); background: var(--s3); }
+.tl__title { font-weight: 650; font-size: 14.5px; display: block; margin-bottom: 3px; }
+.tl__text { font-size: 13.5px; color: var(--ink-2); margin: 0; max-width: 62ch; }
+.tl-key { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 0 0 20px; padding: 0; list-style: none; font-size: 12.5px; color: var(--ink-2); }
+.tl-key li { display: flex; align-items: center; gap: 6px; }
+.tl-key i { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+
+/* ============ CHECKLIST ============ */
+.qgroup { border: 1px solid var(--rule); border-radius: 4px; margin: 18px 0; background: var(--surface); overflow: hidden; }
+.qgroup__head { padding: 12px 18px; background: var(--surface-2); border-bottom: 1px solid var(--rule); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.qgroup__head h3 { margin: 0; font-size: 16px; }
+.qgroup__body { padding: 16px 18px; }
+.qgroup__body > :last-child { margin-bottom: 0; }
+.q { display: grid; grid-template-columns: 42px 1fr; gap: 12px; padding: 11px 0; border-bottom: 1px dashed var(--rule); }
+.q:last-child { border-bottom: none; }
+.q__id { font-family: var(--f-mono); font-size: 12px; font-weight: 700; color: var(--accent); padding-top: 1px; }
+.q__q { font-weight: 600; font-size: 14.5px; margin: 0 0 3px; max-width: none; }
+.q__why { font-size: 13px; color: var(--ink-2); margin: 0; max-width: none; }
+
+/* Static chart marks — same reason as the diagram: no script dependency.
+   Colours live here, not in inline style attributes. */
+.chart-wrap text { font-variant-numeric: tabular-nums; }
+.chart-wrap .m  { font-family: var(--f-mono); }
+.chart-wrap .b  { font-family: var(--f-body); }
+.chart-wrap .i0 { fill: var(--ink); }
+.chart-wrap .i2 { fill: var(--ink-2); }
+.chart-wrap .i3 { fill: var(--ink-3); }
+.chart-wrap .c4 { fill: var(--s4); }
+.chart-wrap .w  { fill: var(--st-warn); }
+.chart-wrap .s1 { fill: var(--s1); }
+.chart-wrap .s3 { fill: var(--s3); }
+.chart-wrap .s4 { fill: var(--s4); }
+.chart-wrap .g   { stroke: var(--grid); stroke-width: 1; }
+.chart-wrap .ax  { stroke: var(--baseline); stroke-width: 1.5; }
+.chart-wrap .dbt { stroke: var(--s4); stroke-width: 1.5; stroke-dasharray: 5 4; }
+
+/* ============ DIAGRAM ============ */
+
+/* Static SVG — no JavaScript, so it renders under any script policy and prints reliably.
+   Colours come from stylesheet rules (not inline var() presentation attributes,
+   which some engines do not substitute). */
+.diagram { overflow-x: auto; }
+.diagram svg { display: block; min-width: 520px; width: 100%; height: auto; }
+
+#d1 text { font-family: var(--f-body); text-anchor: middle; }
+#d1 .t-ink   { fill: var(--ink); }
+#d1 .t-ink2  { fill: var(--ink-2); }
+#d1 .t-ink3  { fill: var(--ink-3); }
+#d1 .t-crit  { fill: var(--st-critical); }
+#d1 .t-good  { fill: var(--st-good); }
+#d1 .t-acc   { fill: var(--accent-ink); }
+#d1 .bx      { fill: var(--surface-2); stroke: var(--rule-strong); stroke-width: 1.5; }
+#d1 .bx-acc  { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
+#d1 .bx-crit { fill: var(--surface-2); stroke: var(--st-critical); stroke-width: 1.5; stroke-dasharray: 5 4; }
+#d1 .flow    { fill: none; stroke: var(--rule-strong); stroke-width: 1.5; }
+#d1 .arrow   { fill: var(--rule-strong); }
+#d1 .fan     { fill: none; stroke: var(--st-critical); stroke-width: 1.2; opacity: .55; }
+#d1 .dot     { fill: var(--st-critical); }
+#d1 .tick    { stroke: var(--st-critical); stroke-width: 1; opacity: .4; }
+#d1 .divide  { stroke: var(--rule); stroke-width: 1; stroke-dasharray: 3 5; }
+
+/* ============ REFERENCE LIST ============ */
+.reflist { list-style: none; counter-reset: r; padding: 0; margin: 22px 0; max-width: none; }
+.reflist li {
+  counter-increment: r;
+  display: grid; grid-template-columns: 34px 1fr; gap: 12px;
+  padding: 11px 0; border-bottom: 1px solid var(--rule);
+  font-size: 14px;
+  scroll-margin-top: 24px;
+}
+.reflist li::before {
+  content: "[" counter(r) "]";
+  grid-column: 1; grid-row: 1;
+  font-family: var(--f-mono); font-size: 12px; font-weight: 700; color: var(--accent);
+  padding-top: 2px;
+}
+/* Every child stacks in the text column. Without this, the 2nd and 3rd children
+   fall into the 34px counter column and long URLs break one character per line. */
+.reflist li > * { grid-column: 2; min-width: 0; }
+.reflist li:target { background: var(--accent-soft); border-radius: 3px; }
+.reflist__src { display: block; font-weight: 600; margin-bottom: 2px; }
+.reflist__use { display: block; font-size: 12.5px; color: var(--ink-3); margin-top: 3px; }
+.reflist a { display: block; word-break: break-word; font-size: 13px; }
+
+
+.footnote { font-size: 13px; color: var(--ink-3); border-top: 1px solid var(--rule); padding-top: 16px; margin-top: 48px; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+@media print {
+  .rail { display: none; }
+  body { background: #fff; font-size: 11pt; }
+  section { page-break-inside: avoid; padding-top: 28px; }
+  figure, .tw, .card { break-inside: avoid; box-shadow: none; }
+  .masthead { padding: 0 0 24px; }
+}
+</style>
+
+
+<div class="shell">
+
+<header class="masthead">
+  <svg class="contours" viewBox="0 0 1200 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M-40,300 C180,250 320,286 470,238 C620,190 760,214 900,166 C1010,128 1120,140 1240,110"/>
+    <path d="M-40,326 C180,278 330,312 486,262 C640,212 780,238 918,190 C1026,152 1130,166 1240,136"/>
+    <path d="M-40,274 C170,224 306,260 452,212 C600,164 738,188 878,140 C990,102 1108,114 1240,84"/>
+    <path d="M-40,248 C160,198 292,234 434,186 C580,138 716,162 856,114 C970,76 1096,88 1240,58"/>
+    <path d="M-40,222 C150,172 278,208 416,160 C560,112 694,136 834,88 C950,50 1084,62 1240,32"/>
+    <path d="M-40,196 C140,146 264,182 398,134 C540,86 672,110 812,62 C930,24 1072,36 1240,6"/>
+  </svg>
+  <div class="masthead__inner">
+    <p class="eyebrow">Hồ sơ bối cảnh doanh nghiệp · Nghiên cứu nguồn mở</p>
+    <h1>Anh Nguyễn Ocean&nbsp;Front Villas, Nha&nbsp;Trang</h1>
+    <p class="masthead__sub">
+      Đánh giá bối cảnh, lịch sử, pháp lý và mô hình vận hành — phục vụ thiết kế
+      hệ thống quản trị vận hành&nbsp;RMA.
+    </p>
+    <dl class="metabar">
+      <div><dt>Ngày tra cứu</dt><dd>11 / 08 / 2026</dd></div>
+      <div><dt>Phạm vi</dt><dd>Nguồn công khai</dd></div>
+      <div><dt>Số nguồn</dt><dd>19 nguồn</dd></div>
+      <div><dt>Trạng thái</dt><dd>Chờ xác nhận nội bộ</dd></div>
+    </dl>
+  </div>
+</header>
+
+<nav class="rail" aria-label="Mục lục">
+  <p class="rail__title">Mục lục</p>
+  <ol>
+    <li><a href="#s00"><span>00</span>Tóm tắt điều hành</a></li>
+    <li><a href="#s01"><span>01</span>Định danh &amp; vị trí</a></li>
+    <li><a href="#s02"><span>02</span>Chủ đầu tư</a></li>
+    <li><a href="#s03"><span>03</span>Lịch sử dự án</a></li>
+    <li><a href="#s04"><span>04</span>Quy mô &amp; sản phẩm</a></li>
+    <li><a href="#s05"><span>05</span>Pháp lý &amp; rủi ro</a></li>
+    <li><a href="#s06"><span>06</span>Mô hình vận hành</a></li>
+    <li><a href="#s07"><span>07</span>Kinh tế vận hành</a></li>
+    <li><a href="#s08"><span>08</span>OTA &amp; đánh giá khách</a></li>
+    <li><a href="#s09"><span>09</span>Thị trường Khánh Hoà</a></li>
+    <li><a href="#s10"><span>10</span>Khoảng trống thông tin</a></li>
+    <li><a href="#s11"><span>11</span>Hàm ý cho hệ thống</a></li>
+    <li><a href="#s12"><span>12</span>Nguồn &amp; phương pháp</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<!-- ══════════════════ 00 ══════════════════ -->
+<section id="s00">
+  <div class="sec-head"><span class="sec-head__num">00</span><h2>Tóm tắt điều hành</h2></div>
+
+  <p>
+    <strong>Anh Nguyễn Ocean Front Villas không phải một resort đơn nhất có một ban điều hành.</strong>
+    Đây là một dự án bất động sản nghỉ dưỡng tại 36–38 Trần Phú, Nha Trang, gồm
+    <strong>79 căn biệt thự thuộc sở hữu riêng lẻ</strong> cộng hai toà căn hộ dịch vụ,
+    trên diện tích <strong>11,89&nbsp;ha</strong> dựa lưng núi Chụt hướng ra vịnh Nha Trang.
+    Chủ đầu tư là Công ty TNHH Anh Nguyễn.<span class="ref"><a href="#r1">1</a><a href="#r3">3</a></span>
+  </p>
+
+  <div class="cards cards--3">
+    <div class="card finding finding--1">
+      <span class="finding__n">Phát hiện 01</span>
+      <h3>Vận hành phân mảnh</h3>
+      <p>
+        Không có đơn vị quản lý khách sạn thống nhất. Các biệt thự được cho thuê qua
+        <strong>nhiều đầu mối độc lập</strong> — môi giới cá nhân, sàn cho thuê villa,
+        listing riêng lẻ trên OTA.<span class="ref"><a href="#r12">12</a><a href="#r13">13</a></span>
+      </p>
+      <p><span class="lb lb--v">Xác minh</span></p>
+    </div>
+    <div class="card finding finding--2">
+      <span class="finding__n">Phát hiện 02</span>
+      <h3>Chủ đầu tư tài chính yếu</h3>
+      <p>
+        Lỗ <strong>5 năm liên tiếp</strong> (2016–2020), nợ gấp <strong>1,3 lần</strong>
+        vốn chủ sở hữu. Dự án duyệt từ 2005, hơn 20 năm chưa hoàn thành, ít nhất
+        4 lần điều chỉnh quy hoạch.<span class="ref"><a href="#r5">5</a><a href="#r6">6</a></span>
+      </p>
+      <p><span class="lb lb--v">Xác minh</span></p>
+    </div>
+    <div class="card finding finding--3">
+      <span class="finding__n">Phát hiện 03</span>
+      <h3>Nguy cơ sạt lở</h3>
+      <p>
+        Khu đất trên sườn núi Chụt, đã bị đưa vào nhóm dự án ven sườn núi
+        <strong>phải tạm dừng để rà soát</strong>. Đây là rủi ro vận hành thật,
+        không phải vấn đề giấy tờ.<span class="ref"><a href="#r9">9</a><a href="#r8">8</a></span>
+      </p>
+      <p><span class="lb lb--v">Xác minh</span></p>
+    </div>
+  </div>
+
+  <h3>Một cơ hội rõ ràng</h3>
+  <div class="stats">
+    <div class="stat">
+      <p class="stat__label">Điểm đánh giá Booking</p>
+      <div class="stat__value">9,8<span class="stat__unit">/ 10</span></div>
+      <p class="stat__note">Nhân viên 10,0 · Sạch sẽ 9,8 · Vị trí 9,8</p>
+    </div>
+    <div class="stat stat--flag">
+      <p class="stat__label">Số lượt đánh giá</p>
+      <div class="stat__value">6</div>
+      <p class="stat__note">Quá ít để có ý nghĩa thống kê</p>
+    </div>
+    <div class="stat">
+      <p class="stat__label">Khách du lịch Khánh Hoà 2025</p>
+      <div class="stat__value">16,4<span class="stat__unit">triệu</span></div>
+      <p class="stat__delta stat__delta--up">▲ 14,4% so với 2024</p>
+    </div>
+    <div class="stat">
+      <p class="stat__label">Doanh thu du lịch 2025</p>
+      <div class="stat__value">66,7<span class="stat__unit">nghìn tỷ đ</span></div>
+      <p class="stat__delta stat__delta--up">▲ 16,8% so với 2024</p>
+    </div>
+  </div>
+  <p>
+    Sản phẩm được đánh giá rất cao nhưng gần như không có hiện diện trên kênh phân phối
+    trực tuyến, trong một thị trường đang tăng trưởng hai chữ số.<span class="ref"><a href="#r14">14</a><a href="#r17">17</a><a href="#r18">18</a></span>
+    Đây là khoảng trống cải thiện được bằng vận hành, không cần đầu tư lớn.
+  </p>
+
+  <div class="callout callout--alert">
+    <span class="callout__label">Câu hỏi chặn</span>
+    <p><strong>Phạm vi quản lý thực tế là gì?</strong> Một vài căn biệt thự · một đơn vị
+    quản lý ~14 căn · toàn bộ khu 79 căn · hay phía chủ đầu tư?</p>
+    <p>Câu trả lời làm thay đổi gần như toàn bộ thiết kế hệ thống: số bộ phận, cách lấy
+    dữ liệu, bộ chỉ số, chu kỳ báo cáo. Chi tiết tại <a href="#s10">mục 10</a>.</p>
+  </div>
+</section>
+
+<!-- ══════════════════ 01 ══════════════════ -->
+<section id="s01">
+  <div class="sec-head"><span class="sec-head__num">01</span><h2>Định danh &amp; vị trí</h2></div>
+
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 1.1</b> — Thông tin định danh dự án</caption>
+      <thead><tr><th>Mục</th><th>Thông tin</th><th>Độ tin cậy</th></tr></thead>
+      <tbody>
+        <tr><td>Tên pháp lý</td><td>Khu biệt thự biển và dịch vụ du lịch Anh Nguyễn</td><td><span class="lb lb--v">Xác minh</span></td></tr>
+        <tr><td>Thương hiệu thương mại</td><td>Anh Nguyễn Ocean Front Villas → <em>Anh Nguyen Oceanfront Villas</em> (2026)</td><td><span class="lb lb--v">Xác minh</span></td></tr>
+        <tr><td>Địa chỉ</td><td>36–38 Trần Phú, P. Vĩnh Nguyên, TP. Nha Trang, Khánh Hoà<span class="ref"><a href="#r1">1</a><a href="#r3">3</a></span></td><td><span class="lb lb--v">Xác minh</span></td></tr>
+        <tr><td>Địa chỉ sau sáp nhập 2025</td><td>Trần Phú, <strong>phường Nha Trang</strong>, tỉnh Khánh Hoà<span class="ref"><a href="#r2">2</a></span></td><td><span class="lb lb--s">Một nguồn</span></td></tr>
+        <tr><td>Tổng diện tích</td><td class="num">118.897,2 m² <span style="color:var(--ink-3)">(~11,89 ha)</span></td><td><span class="lb lb--v">Xác minh</span></td></tr>
+        <tr><td>— đất thương mại dịch vụ</td><td class="num">49.147,7 m²</td><td><span class="lb lb--s">Một nguồn</span></td></tr>
+        <tr><td>— đất hạ tầng</td><td class="num">69.749,5 m²</td><td><span class="lb lb--s">Một nguồn</span></td></tr>
+        <tr><td>Vị trí</td><td>Lưng tựa núi Chụt / Cảnh Long (~142 m), mặt hướng vịnh Nha Trang; Nam Nha Trang, gần Cầu Đá</td><td><span class="lb lb--v">Xác minh</span></td></tr>
+        <tr><td>Mật độ xây dựng toàn khu</td><td class="num">24,4%<span class="ref"><a href="#r4">4</a></span></td><td><span class="lb lb--m">Marketing</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__label">Lưu ý về địa chỉ</span>
+    <p>Việt Nam sáp nhập đơn vị hành chính cấp phường năm 2025 — phường Vĩnh Nguyên đã
+    nhập vào <strong>phường Nha Trang</strong>. Mọi tài liệu ghi “P. Vĩnh Nguyên” đều dùng
+    địa danh trước sáp nhập. Cần thống nhất một cách ghi trong hệ thống.</p>
+  </div>
+
+  <h3>Bản đồ nguồn — bảy website dễ nhầm lẫn</h3>
+  <p>
+    Có ít nhất bảy website cùng nói về khu này, với bản chất rất khác nhau.
+    Đây là nguồn nhầm lẫn lớn nhất khi tra cứu.
+  </p>
+
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 1.2</b> — Phân loại các website liên quan theo bản chất và độ tin cậy</caption>
+      <thead><tr><th>Website</th><th>Bản chất</th><th>Độ tin cậy</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">anhnguyen.vn</td><td>Website chính thức Công ty TNHH Anh Nguyễn<span class="ref"><a href="#r1">1</a></span></td><td><span class="chip chip--unk"><i></i>Cao — nguồn gốc</span></td></tr>
+        <tr><td class="mono">anhnguyenoceanfrontvillas.com</td><td>Sales gallery thương hiệu 2026<span class="ref"><a href="#r2">2</a></span></td><td><span class="chip chip--ser"><i></i>Trung bình — bán hàng</span></td></tr>
+        <tr><td class="mono">anhnguyenvillas.com</td><td><strong>Đầu mối cho thuê bên thứ ba</strong> · 14 villa · liên hệ cá nhân + Gmail<span class="ref"><a href="#r12">12</a></span></td><td><span class="chip chip--ser"><i></i>Trung bình — phản ánh vận hành</span></td></tr>
+        <tr><td class="mono">anhnguyenhorizon.com</td><td>Sàn môi giới bán hàng</td><td><span class="chip chip--warn"><i></i>Thấp — marketing</span></td></tr>
+        <tr><td class="mono">anhnguyen-oceanfrontnhatrang.com</td><td>Sàn môi giới bán hàng</td><td><span class="chip chip--warn"><i></i>Thấp — marketing</span></td></tr>
+        <tr><td class="mono">thuevilla.com · vila.com.vn</td><td>Sàn cho thuê villa bên thứ ba<span class="ref"><a href="#r16">16</a></span></td><td><span class="chip chip--ser"><i></i>Trung bình — giá niêm yết</span></td></tr>
+        <tr><td class="mono">villanhatrang.com</td><td>Sàn cho thuê villa</td><td><span class="chip chip--crit"><i></i>Tên miền đã hết hạn</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--alert">
+    <span class="callout__label">Điểm cần chú ý</span>
+    <p>
+      <code class="mono">anhnguyenvillas.com</code> mang đúng tiêu đề
+      <strong>“Ocean front villas Nha Trang”</strong> — trùng khớp với cách đối tượng
+      được mô tả khi giao việc. Đây là <strong>một đơn vị cho thuê khoảng 14 villa</strong>
+      trong khu, <strong>không phải chủ đầu tư</strong>: liên hệ là số điện thoại cá nhân
+      và địa chỉ Gmail, địa chỉ ghi “Villa B2, Anh Nguyễn, Nha Trang”.<span class="ref"><a href="#r12">12</a></span>
+    </p>
+    <p>Nếu đây là phạm vi quản lý thực tế thì quy mô nhỏ hơn rất nhiều so với “resort 79 căn”,
+    và toàn bộ thiết kế cần rút gọn tương ứng. <span class="lb lb--i">Suy luận</span></p>
+  </div>
+</section>
+
+<!-- ══════════════════ 02 ══════════════════ -->
+<section id="s02">
+  <div class="sec-head"><span class="sec-head__num">02</span><h2>Chủ đầu tư — Công ty TNHH Anh Nguyễn</h2></div>
+
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 2.1</b> — Thông tin doanh nghiệp <span class="lb lb--v">Xác minh</span> · Nguồn <span class="ref"><a href="#r6">6</a></span></caption>
+      <thead><tr><th>Mục</th><th>Thông tin</th></tr></thead>
+      <tbody>
+        <tr><td>Thành lập</td><td>08/07/1998</td></tr>
+        <tr><td>Trụ sở chính</td><td>53 Châu Long, P. Trúc Bạch, Q. Ba Đình, <strong>Hà Nội</strong></td></tr>
+        <tr><td>Vốn điều lệ</td><td class="num">~297,9 tỷ đ <span style="color:var(--ink-3)">(13/05/2019)</span></td></tr>
+        <tr><td>Người đại diện pháp luật / TGĐ</td><td><strong>Nguyễn Ngọc Quang</strong></td></tr>
+        <tr><td>Sở hữu</td><td>Nguyễn Ngọc Quang <strong>62%</strong> (184 tỷ đ) · Nguyễn Thị Thu Hiền <strong>38%</strong> (113 tỷ đ)</td></tr>
+        <tr><td>Địa bàn dự án</td><td>Nha Trang · Cam Ranh · Ninh Bình <span class="lb lb--m">Marketing</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    Đây là <strong>doanh nghiệp gia đình</strong>, không phải công ty đại chúng — nghĩa là
+    không có báo cáo tài chính định kỳ bắt buộc công khai. Dữ liệu bên dưới do báo chí
+    khai thác, không phải do doanh nghiệp công bố. <span class="lb lb--i">Suy luận</span>
+  </p>
+
+  <figure>
+    <h4>Doanh thu và lỗ ròng, 2016–2020</h4>
+    <p class="fig-sub">Đơn vị: tỷ đồng. Cột dưới trục 0 là lỗ.</p>
+    <ul class="legend">
+      <li><i style="background:var(--s1)"></i>Doanh thu</li>
+      <li><i style="background:var(--s4)"></i>Lỗ ròng</li>
+    </ul>
+    <div class="chart-wrap"><svg id="c1" viewBox="0 0 680 320" role="img" aria-label="Biểu đồ cột doanh thu và lỗ ròng của Công ty TNHH Anh Nguyễn từ 2016 đến 2020">
+      <line x1="52" y1="20" x2="664" y2="20" class="g"/>
+      <text x="43" y="23.5" text-anchor="end" font-size="10" font-weight="400" class="m i3">80</text>
+      <line x1="52" y1="58.769230769230774" x2="664" y2="58.769230769230774" class="g"/>
+      <text x="43" y="62.269230769230774" text-anchor="end" font-size="10" font-weight="400" class="m i3">60</text>
+      <line x1="52" y1="97.53846153846155" x2="664" y2="97.53846153846155" class="g"/>
+      <text x="43" y="101.03846153846155" text-anchor="end" font-size="10" font-weight="400" class="m i3">40</text>
+      <line x1="52" y1="136.30769230769232" x2="664" y2="136.30769230769232" class="g"/>
+      <text x="43" y="139.80769230769232" text-anchor="end" font-size="10" font-weight="400" class="m i3">20</text>
+      <line x1="52" y1="175.0769230769231" x2="664" y2="175.0769230769231" class="ax"/>
+      <text x="43" y="178.5769230769231" text-anchor="end" font-size="10" font-weight="400" class="m i3">0</text>
+      <line x1="52" y1="213.84615384615387" x2="664" y2="213.84615384615387" class="g"/>
+      <text x="43" y="217.34615384615387" text-anchor="end" font-size="10" font-weight="400" class="m i3">-20</text>
+      <line x1="52" y1="252.61538461538464" x2="664" y2="252.61538461538464" class="g"/>
+      <text x="43" y="256.11538461538464" text-anchor="end" font-size="10" font-weight="400" class="m i3">-40</text>
+      <text x="43" y="13" text-anchor="end" font-size="9.5" font-weight="400" class="m i3">tỷ đ</text>
+      <path d="M77.2,175.0769230769231V95.52923076923078a4,4 0 0 1 4,-4h26a4,4 0 0 1 4,4V175.0769230769231Z" class="s1"/>
+      <text x="94.2" y="84.52923076923078" text-anchor="middle" font-size="11" font-weight="700" class="m i0">43,1</text>
+      <path d="M115.2,175.0769230769231V233.10769230769233a4,4 0 0 0 4,4h26a4,4 0 0 0 4,-4V175.0769230769231Z" class="s4"/>
+      <text x="132.2" y="251.10769230769233" text-anchor="middle" font-size="11" font-weight="700" class="m c4">−32,0</text>
+      <text x="113.2" y="298" text-anchor="middle" font-size="12" font-weight="600" class="m i2">2016</text>
+      <path d="M199.60000000000002,175.0769230769231V138.7569230769231a4,4 0 0 1 4,-4h26a4,4 0 0 1 4,4V175.0769230769231Z" class="s1"/>
+      <text x="216.60000000000002" y="127.7569230769231" text-anchor="middle" font-size="11" font-weight="700" class="m i0">20,8</text>
+      <path d="M237.60000000000002,175.0769230769231V254.0430769230769a4,4 0 0 0 4,4h26a4,4 0 0 0 4,-4V175.0769230769231Z" class="s4"/>
+      <text x="254.60000000000002" y="272.0430769230769" text-anchor="middle" font-size="11" font-weight="700" class="m c4">−42,8</text>
+      <text x="235.60000000000002" y="298" text-anchor="middle" font-size="12" font-weight="600" class="m i2">2017</text>
+      <path d="M322,175.0769230769231V123.44307692307694a4,4 0 0 1 4,-4h26a4,4 0 0 1 4,4V175.0769230769231Z" class="s1"/>
+      <text x="339" y="112.44307692307694" text-anchor="middle" font-size="11" font-weight="700" class="m i0">28,7</text>
+      <path d="M360,175.0769230769231V190.07384615384618a4,4 0 0 0 4,4h26a4,4 0 0 0 4,-4V175.0769230769231Z" class="s4"/>
+      <text x="377" y="208.07384615384618" text-anchor="middle" font-size="11" font-weight="700" class="m c4">−9,8</text>
+      <text x="358" y="298" text-anchor="middle" font-size="12" font-weight="600" class="m i2">2018</text>
+      <path d="M444.40000000000003,175.0769230769231V160.66153846153847a4,4 0 0 1 4,-4h26a4,4 0 0 1 4,4V175.0769230769231Z" class="s1"/>
+      <text x="461.40000000000003" y="149.66153846153847" text-anchor="middle" font-size="11" font-weight="700" class="m i0">9,5</text>
+      <path d="M482.40000000000003,175.0769230769231V182.12615384615387a4,4 0 0 0 4,4h26a4,4 0 0 0 4,-4V175.0769230769231Z" class="s4"/>
+      <text x="499.40000000000003" y="200.12615384615387" text-anchor="middle" font-size="11" font-weight="700" class="m c4">−5,7</text>
+      <text x="480.40000000000003" y="298" text-anchor="middle" font-size="12" font-weight="600" class="m i2">2019</text>
+      <path d="M566.8000000000001,175.0769230769231V30.784615384615392a4,4 0 0 1 4,-4h26a4,4 0 0 1 4,4V175.0769230769231Z" class="s1"/>
+      <text x="583.8000000000001" y="19.784615384615392" text-anchor="middle" font-size="11" font-weight="700" class="m i0">76,5</text>
+      <path d="M604.8000000000001,175.0769230769231V183.6769230769231a4,4 0 0 0 4,4h26a4,4 0 0 0 4,-4V175.0769230769231Z" class="s4"/>
+      <text x="621.8000000000001" y="201.6769230769231" text-anchor="middle" font-size="11" font-weight="700" class="m c4">−6,5</text>
+      <text x="602.8000000000001" y="298" text-anchor="middle" font-size="12" font-weight="600" class="m i2">2020</text>
+    </svg></div>
+    <figcaption>
+      Nguồn: Báo Xây dựng<span class="ref"><a href="#r6">6</a></span> · <span class="lb lb--s">Một nguồn</span> —
+      chưa đối chứng được với nguồn thứ hai. Không có dữ liệu công khai sau 2020.
+    </figcaption>
+  </figure>
+
+  <figure>
+    <h4>Vốn chủ sở hữu, 2016–2020</h4>
+    <p class="fig-sub">Đơn vị: tỷ đồng. Nợ phải trả tại 31/12/2020 là 247 tỷ đ — gấp ~1,3 lần vốn chủ sở hữu.</p>
+    <div class="chart-wrap"><svg id="c2" viewBox="0 0 680 260" role="img" aria-label="Biểu đồ cột vốn chủ sở hữu từ 2016 đến 2020, có đường tham chiếu nợ phải trả 247 tỷ đồng">
+      <line x1="52" y1="208" x2="664" y2="208" class="ax"/>
+      <text x="43" y="211.5" text-anchor="end" font-size="10" font-weight="400" class="m i3">0</text>
+      <line x1="52" y1="172.23076923076923" x2="664" y2="172.23076923076923" class="g"/>
+      <text x="43" y="175.73076923076923" text-anchor="end" font-size="10" font-weight="400" class="m i3">50</text>
+      <line x1="52" y1="136.46153846153845" x2="664" y2="136.46153846153845" class="g"/>
+      <text x="43" y="139.96153846153845" text-anchor="end" font-size="10" font-weight="400" class="m i3">100</text>
+      <line x1="52" y1="100.6923076923077" x2="664" y2="100.6923076923077" class="g"/>
+      <text x="43" y="104.1923076923077" text-anchor="end" font-size="10" font-weight="400" class="m i3">150</text>
+      <line x1="52" y1="64.92307692307693" x2="664" y2="64.92307692307693" class="g"/>
+      <text x="43" y="68.42307692307693" text-anchor="end" font-size="10" font-weight="400" class="m i3">200</text>
+      <line x1="52" y1="29.153846153846153" x2="664" y2="29.153846153846153" class="g"/>
+      <text x="43" y="32.65384615384615" text-anchor="end" font-size="10" font-weight="400" class="m i3">250</text>
+      <text x="43" y="14" text-anchor="end" font-size="9.5" font-weight="400" class="m i3">tỷ đ</text>
+      <line x1="52" y1="31.3" x2="664" y2="31.3" class="dbt"/>
+      <text x="664" y="24.3" text-anchor="end" font-size="10.5" font-weight="700" class="m c4">Nợ phải trả 31/12/2020 · 247</text>
+      <path d="M90.2,208V179.6646153846154a4,4 0 0 1 4,-4h38a4,4 0 0 1 4,4V208Z" class="s3"/>
+      <text x="113.2" y="168.6646153846154" text-anchor="middle" font-size="11" font-weight="700" class="m i0">45,2</text>
+      <text x="113.2" y="232" text-anchor="middle" font-size="12" font-weight="600" class="m i2">2016</text>
+      <path d="M212.60000000000002,208.00000000000003V208.00000000000003a1.7169230769230768,1.7169230769230768 0 0 1 1.7169230769230768,-1.7169230769230768h42.566153846153846a1.7169230769230768,1.7169230769230768 0 0 1 1.7169230769230768,1.7169230769230768V208.00000000000003Z" class="s3"/>
+      <text x="235.60000000000002" y="199.28307692307695" text-anchor="middle" font-size="11" font-weight="700" class="m i0">2,4</text>
+      <text x="235.60000000000002" y="232" text-anchor="middle" font-size="12" font-weight="600" class="m i2">2017</text>
+      <path d="M335,208V190.68153846153845a4,4 0 0 1 4,-4h38a4,4 0 0 1 4,4V208Z" class="s3"/>
+      <text x="358" y="179.68153846153845" text-anchor="middle" font-size="11" font-weight="700" class="m i0">29,8</text>
+      <text x="358" y="232" text-anchor="middle" font-size="12" font-weight="600" class="m i2">2018</text>
+      <path d="M457.40000000000003,208V51.03846153846153a4,4 0 0 1 4,-4h38a4,4 0 0 1 4,4V208Z" class="s3"/>
+      <text x="480.40000000000003" y="40.03846153846153" text-anchor="middle" font-size="11" font-weight="700" class="m i0">225</text>
+      <text x="480.40000000000003" y="232" text-anchor="middle" font-size="12" font-weight="600" class="m i2">2019</text>
+      <path d="M579.8000000000001,208V81.08461538461538a4,4 0 0 1 4,-4h38a4,4 0 0 1 4,4V208Z" class="s3"/>
+      <text x="602.8000000000001" y="70.08461538461538" text-anchor="middle" font-size="11" font-weight="700" class="m i0">183</text>
+      <text x="602.8000000000001" y="232" text-anchor="middle" font-size="12" font-weight="600" class="m i2">2020</text>
+    </svg></div>
+    <figcaption>Nguồn: Báo Xây dựng<span class="ref"><a href="#r6">6</a></span> · <span class="lb lb--s">Một nguồn</span></figcaption>
+  </figure>
+
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 2.2</b> — Số liệu chi tiết (tỷ đồng)</caption>
+      <thead><tr><th>Năm</th><th class="num">Doanh thu</th><th class="num">Lãi / lỗ</th><th class="num">Vốn chủ sở hữu</th></tr></thead>
+      <tbody>
+        <tr><td>2016</td><td class="num">43,1</td><td class="num neg">−32,0</td><td class="num">45,2</td></tr>
+        <tr><td>2017</td><td class="num">20,8</td><td class="num neg">−42,8</td><td class="num">2,4</td></tr>
+        <tr><td>2018</td><td class="num">28,7</td><td class="num neg">−9,8</td><td class="num">29,8</td></tr>
+        <tr><td>2019</td><td class="num">9,5</td><td class="num neg">−5,7</td><td class="num">225,0</td></tr>
+        <tr><td>2020</td><td class="num">76,5</td><td class="num neg">−6,5</td><td class="num">183,0</td></tr>
+        <tr style="border-top:2px solid var(--rule-strong)"><td><strong>Luỹ kế</strong></td><td class="num"><strong>178,6</strong></td><td class="num neg"><strong>−96,8</strong></td><td class="num">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Đọc gì từ các con số</h3>
+
+  <div class="cards cards--2">
+    <div class="card">
+      <h4 style="margin-top:0">Lỗ 5 năm liên tiếp</h4>
+      <p style="font-size:14.5px;color:var(--ink-2);margin:0">
+        Tổng lỗ luỹ kế 2016–2020 khoảng <strong>96,8 tỷ đồng</strong>. Không có năm nào
+        có lãi trong dữ liệu công khai được.
+      </p>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">Doanh thu biến động gấp 8 lần</h4>
+      <p style="font-size:14.5px;color:var(--ink-2);margin:0">
+        Từ 9,5 đến 76,5 tỷ đ. Đặc trưng của doanh nghiệp BĐS ghi nhận doanh thu
+        <strong>theo đợt bàn giao</strong>, không phải doanh nghiệp vận hành lưu trú
+        có dòng tiền đều. <span class="lb lb--i">Suy luận</span>
+      </p>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">Vốn chủ sở hữu nhảy bậc</h4>
+      <p style="font-size:14.5px;color:var(--ink-2);margin:0">
+        2,4 tỷ (2017) → 225 tỷ (2019), trong khi cả hai năm đều lỗ. Gần như chắc chắn là
+        <strong>góp thêm vốn</strong>, không phải lợi nhuận tích luỹ. <span class="lb lb--i">Suy luận</span>
+      </p>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">Dữ liệu đã cũ 5+ năm</h4>
+      <p style="font-size:14.5px;color:var(--ink-2);margin:0">
+        Không tìm thấy số liệu nào sau 2020. Bức tranh này phản ánh giai đoạn trước và
+        trong COVID; tình hình 2021–2025 hoàn toàn không rõ.
+      </p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="callout__label">Hàm ý cho công việc quản lý</span>
+    <p><strong>Khả năng chủ đầu tư đầu tư thêm cho tiện ích chung của khu là hạn chế.</strong>
+    Đừng lập kế hoạch phụ thuộc vào việc chủ đầu tư nâng cấp hạ tầng.</p>
+    <p>Đồng thời, <strong>không thể suy ra hiệu quả vận hành cho thuê từ báo cáo tài chính
+    của chủ đầu tư</strong> — hai hoạt động này tách rời nhau.</p>
+  </div>
+</section>
+
+<!-- ══════════════════ 03 ══════════════════ -->
+<section id="s03">
+  <div class="sec-head"><span class="sec-head__num">03</span><h2>Lịch sử dự án</h2></div>
+
+  <ul class="tl-key">
+    <li><i style="background:var(--s1)"></i>Mốc pháp lý</li>
+    <li><i style="background:var(--st-warn)"></i>Điều chỉnh quy hoạch</li>
+    <li><i style="background:var(--st-critical)"></i>Vi phạm / cảnh báo</li>
+    <li><i style="background:var(--s3)"></i>Hoạt động thương mại</li>
+  </ul>
+
+  <ol class="tl">
+    <li data-kind="legal"><div class="tl__date">2005</div><div class="tl__body">
+      <span class="tl__title">Chấp thuận chủ trương đầu tư</span>
+      <p class="tl__text">116.000 m² trên núi Chụt — gồm <strong>45.000 m² đất rừng phòng hộ</strong>
+      + 71.000 m² đất xây dựng.<span class="ref"><a href="#r5">5</a></span></p></div></li>
+
+    <li data-kind="legal"><div class="tl__date">15/10<br>2007</div><div class="tl__body">
+      <span class="tl__title">Giấy chứng nhận đầu tư lần đầu</span>
+      <p class="tl__text">Vốn <strong>190 tỷ đ</strong>, tiến độ <strong>2005–2009</strong>,
+      quy mô <strong>64 biệt thự</strong> (25.000 m²) + khu du lịch ~10.000 m².<span class="ref"><a href="#r5">5</a></span></p></div></li>
+
+    <li data-kind="adjust"><div class="tl__date">2014</div><div class="tl__body">
+      <span class="tl__title">Điều chỉnh quy hoạch lần 1</span>
+      <p class="tl__text">Biệt thự <strong>72 → 79 lô</strong> · nhà nghệ sĩ 5 → 9 tầng ·
+      trung tâm triển lãm 2 → 4 tầng · <strong>940 m² cây xanh → 7 lô nhà phố</strong> 6 tầng,
+      mật độ 75–80%.<span class="ref"><a href="#r5">5</a></span></p></div></li>
+
+    <li data-kind="legal"><div class="tl__date">27/04<br>2017</div><div class="tl__body">
+      <span class="tl__title">Cấp sổ cho 8 lô đầu tiên</span>
+      <p class="tl__text">7 biệt thự + 1 khách sạn, trên tổng 79 lô.<span class="ref"><a href="#r5">5</a></span>
+      <span class="lb lb--s">Một nguồn</span></p></div></li>
+
+    <li data-kind="adjust"><div class="tl__date">22/06<br>2020</div><div class="tl__body">
+      <span class="tl__title">Điều chỉnh lần 3 — “lần cuối cùng”</span>
+      <p class="tl__text">Mật độ khối căn hộ <strong>60% → 67,4%</strong> · chiều cao 31 → 31,5 m.
+      Tỉnh ghi rõ <em>“đây là lần điều chỉnh cuối cùng, không xem xét thêm”</em>.<span class="ref"><a href="#r5">5</a></span></p></div></li>
+
+    <li data-kind="commerce"><div class="tl__date">30/06<br>2021</div><div class="tl__body">
+      <span class="tl__title">Toà AnCruising bắt đầu chào bán</span>
+      <p class="tl__text">Rao bán rầm rộ khi mới hoàn thành phần móng.<span class="ref"><a href="#r5">5</a><a href="#r8">8</a></span></p></div></li>
+
+    <li data-kind="adjust"><div class="tl__date">11/10<br>2021</div><div class="tl__body">
+      <span class="tl__title">Gia hạn tiến độ thêm 24 tháng</span>
+      <p class="tl__text">Kể từ 01/01/2021. Doanh nghiệp xin tăng <strong>116.000 → 118.000 m²</strong>,
+      khối căn hộ <strong>8 → 10 tầng</strong> (~436 căn). Đích mới: <strong>Q3/2025</strong>.<span class="ref"><a href="#r5">5</a><a href="#r9">9</a></span></p></div></li>
+
+    <li data-kind="violation"><div class="tl__date">21/10<br>2021</div><div class="tl__body">
+      <span class="tl__title">Báo chí phản ánh bất thường</span>
+      <p class="tl__text">Rao bán AnCruising khi hồ sơ điều chỉnh <strong>chưa được duyệt</strong>
+      và <strong>chưa có giấy phép xây dựng</strong>.<span class="ref"><a href="#r8">8</a></span></p></div></li>
+
+    <li data-kind="violation"><div class="tl__date">01<br>2022</div><div class="tl__body">
+      <span class="tl__title">Kiến nghị xử phạt khai thác khoáng sản</span>
+      <p class="tl__text">Sở TN&amp;MT kiến nghị UBND tỉnh xử phạt: đào và vận chuyển
+      <strong>40.000 m³ đất đá ra ngoài dự án khi chưa được cấp phép</strong>; truy thu
+      phí khoáng sản, phí BVMT, thuế tài nguyên. Còn 14.115 m³ chưa đào.<span class="ref"><a href="#r7">7</a></span></p></div></li>
+
+    <li data-kind="violation"><div class="tl__date">2022</div><div class="tl__body">
+      <span class="tl__title">Yêu cầu tạm dừng rà soát sạt lở</span>
+      <p class="tl__text">Sở KH&amp;ĐT đưa dự án vào nhóm ven sườn núi phải tạm dừng
+      để rà soát nguy cơ sạt lở.<span class="ref"><a href="#r9">9</a></span></p></div></li>
+
+    <li data-kind="commerce"><div class="tl__date">06<br>2026</div><div class="tl__body">
+      <span class="tl__title">Tái định vị thương hiệu</span>
+      <p class="tl__text">Thành <em>“Anh Nguyen Oceanfront Villas”</em>. Dòng sản phẩm mới:
+      Villas · Horizon · Veranda · Art Apartments · The AQ Club.<span class="ref"><a href="#r4">4</a><a href="#r2">2</a></span>
+      <span class="lb lb--m">Marketing</span></p></div></li>
+
+    <li data-kind="commerce"><div class="tl__date">07<br>2027</div><div class="tl__body">
+      <span class="tl__title">Dự kiến bàn giao phân khu Horizon</span>
+      <p class="tl__text">Booking giữ chỗ 100 triệu đ. <span class="lb lb--s">Một nguồn</span></p></div></li>
+  </ol>
+
+  <figure>
+    <h4>Mỗi lần điều chỉnh đều tăng quy mô</h4>
+    <p class="fig-sub">Số lô biệt thự được duyệt qua các mốc quy hoạch.</p>
+    <div class="chart-wrap"><svg id="c3" viewBox="0 0 680 240" role="img" aria-label="Biểu đồ cột số lô biệt thự tăng từ 64 năm 2007 lên 72 rồi 79 lô năm 2014">
+      <line x1="52" y1="178" x2="664" y2="178" class="ax"/>
+      <text x="43" y="181.5" text-anchor="end" font-size="10" font-weight="400" class="m i3">0</text>
+      <line x1="52" y1="127.33333333333333" x2="664" y2="127.33333333333333" class="g"/>
+      <text x="43" y="130.83333333333331" text-anchor="end" font-size="10" font-weight="400" class="m i3">30</text>
+      <line x1="52" y1="76.66666666666666" x2="664" y2="76.66666666666666" class="g"/>
+      <text x="43" y="80.16666666666666" text-anchor="end" font-size="10" font-weight="400" class="m i3">60</text>
+      <line x1="52" y1="26" x2="664" y2="26" class="g"/>
+      <text x="43" y="29.5" text-anchor="end" font-size="10" font-weight="400" class="m i3">90</text>
+      <text x="43" y="17" text-anchor="end" font-size="9.5" font-weight="400" class="m i3">lô</text>
+      <path d="M115,178V73.9111111111111a4,4 0 0 1 4,-4h70a4,4 0 0 1 4,4V178Z" class="s1"/>
+      <text x="154" y="61.9111111111111" text-anchor="middle" font-size="15" font-weight="700" class="m i0">64</text>
+      <text x="154" y="200" text-anchor="middle" font-size="11" font-weight="400" class="b i2">GCN đầu tư 2007</text>
+      <path d="M319,178V60.400000000000006a4,4 0 0 1 4,-4h70a4,4 0 0 1 4,4V178Z" class="s1"/>
+      <text x="358" y="48.400000000000006" text-anchor="middle" font-size="15" font-weight="700" class="m i0">72</text>
+      <text x="358" y="200" text-anchor="middle" font-size="11" font-weight="400" class="b i2">Trước điều chỉnh 2014</text>
+      <text x="256" y="72.4" text-anchor="middle" font-size="11.5" font-weight="700" class="m w">+8</text>
+      <path d="M523,178V48.577777777777776a4,4 0 0 1 4,-4h70a4,4 0 0 1 4,4V178Z" class="s1"/>
+      <text x="562" y="36.577777777777776" text-anchor="middle" font-size="15" font-weight="700" class="m i0">79</text>
+      <text x="562" y="200" text-anchor="middle" font-size="11" font-weight="400" class="b i2">Sau điều chỉnh 2014</text>
+      <text x="460" y="60.577777777777776" text-anchor="middle" font-size="11.5" font-weight="700" class="m w">+7</text>
+    </svg></div>
+    <figcaption>Nguồn: Báo Đầu tư<span class="ref"><a href="#r5">5</a></span> · <span class="lb lb--v">Xác minh</span></figcaption>
+  </figure>
+
+  <h3>Ba mẫu hình đáng chú ý</h3>
+
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 3.1</b> — Hướng thay đổi qua từng lần điều chỉnh quy hoạch</caption>
+      <thead><tr><th>Lần</th><th>Thay đổi chính</th><th>Hướng</th></tr></thead>
+      <tbody>
+        <tr><td>2014</td><td>72 → 79 lô biệt thự; 5 → 9 tầng; 2 → 4 tầng; cây xanh → nhà phố</td><td><span class="chip chip--warn"><i></i>↑ số căn bán được</span></td></tr>
+        <tr><td>2020</td><td>Mật độ 60% → 67,4%; cao 31 → 31,5 m</td><td><span class="chip chip--warn"><i></i>↑ diện tích sàn</span></td></tr>
+        <tr><td>2021</td><td>116.000 → 118.000 m²; 8 → 10 tầng; ~436 căn</td><td><span class="chip chip--warn"><i></i>↑ quy mô</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    <strong>Không có lần nào giảm quy mô hay tăng tiện ích chung.</strong> Mỗi lần điều chỉnh
+    đều làm tăng mật độ xây dựng trên một khu đất sườn núi vốn đã bị cảnh báo sạt lở.
+    Đáng chú ý: tỉnh đã ghi rõ năm 2020 rằng đây là lần điều chỉnh cuối cùng — nhưng
+    năm 2021 doanh nghiệp vẫn xin điều chỉnh tiếp và được chấp thuận gia hạn.<span class="ref"><a href="#r5">5</a><a href="#r11">11</a></span>
+  </p>
+
+  <div class="callout callout--warn">
+    <span class="callout__label">Hệ quả thực tế</span>
+    <p>Dự án duyệt 2005, mốc hoàn thành ban đầu là 2009; mốc gần nhất được duyệt là Q3/2025 —
+    cũng đã trôi qua. <strong>Mọi mốc tiến độ do chủ đầu tư công bố đều cần được nghi ngờ.</strong>
+    Nếu công việc phụ thuộc vào tiện ích chung sắp bàn giao (clubhouse, hồ bơi, nhà hàng),
+    đừng lập kế hoạch dựa trên mốc công bố. <span class="lb lb--i">Suy luận</span></p>
+  </div>
+</section>
+
+<!-- ══════════════════ 04 ══════════════════ -->
+<section id="s04">
+  <div class="sec-head"><span class="sec-head__num">04</span><h2>Quy mô &amp; sản phẩm</h2></div>
+
+  <figure>
+    <h4>Cơ cấu ba phân khu</h4>
+    <p class="fig-sub">Số căn theo từng phân khu.</p>
+    <div class="chart-wrap"><svg id="c4" viewBox="0 0 680 210" role="img" aria-label="Biểu đồ thanh ngang so sánh số căn ba phân khu: 79 biệt thự, 203 căn hộ dịch vụ, 170 căn hộ suite">
+      <line x1="218" y1="16" x2="218" y2="62" class="ax"/>
+      <path d="M218,22H354.76363636363635a4,4 0 0 1 4,4v26a4,4 0 0 1 -4,4H218Z" class="s1"/>
+      <text x="206" y="37" text-anchor="end" font-size="12.5" font-weight="650" class="b i0">Ocean Front Villas</text>
+      <text x="206" y="52" text-anchor="end" font-size="11" font-weight="400" class="b i3">biệt thự</text>
+      <text x="370.76363636363635" y="44" text-anchor="start" font-size="14" font-weight="700" class="m i0">79</text>
+      <line x1="218" y1="72" x2="218" y2="118" class="ax"/>
+      <path d="M218,78H575.709090909091a4,4 0 0 1 4,4v26a4,4 0 0 1 -4,4H218Z" class="s1"/>
+      <text x="206" y="93" text-anchor="end" font-size="12.5" font-weight="650" class="b i0">Ocean Front Condominium</text>
+      <text x="206" y="108" text-anchor="end" font-size="11" font-weight="400" class="b i3">căn hộ dịch vụ</text>
+      <text x="591.709090909091" y="100" text-anchor="start" font-size="14" font-weight="700" class="m i0">203</text>
+      <line x1="218" y1="128" x2="218" y2="174" class="ax"/>
+      <path d="M218,134H516.9090909090909a4,4 0 0 1 4,4v26a4,4 0 0 1 -4,4H218Z" class="s1"/>
+      <text x="206" y="149" text-anchor="end" font-size="12.5" font-weight="650" class="b i0">Ocean Front AquaMarine</text>
+      <text x="206" y="164" text-anchor="end" font-size="11" font-weight="400" class="b i3">căn hộ suite</text>
+      <text x="532.9090909090909" y="156" text-anchor="start" font-size="14" font-weight="700" class="m i0">170 (169 + 1 PH)</text>
+    </svg></div>
+    <figcaption>Nguồn: Công ty TNHH Anh Nguyễn<span class="ref"><a href="#r1">1</a></span>, CafeLand<span class="ref"><a href="#r3">3</a></span> · <span class="lb lb--v">Xác minh</span></figcaption>
+  </figure>
+
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 4.1</b> — Thông số ba phân khu</caption>
+      <thead><tr><th>Phân khu</th><th>Loại hình</th><th class="num">Số căn</th><th class="num">Tầng</th><th class="num">Diện tích / căn</th><th class="num">Mật độ XD</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Ocean Front Villas</strong></td><td>Biệt thự đơn lập</td><td class="num">79</td><td class="num">2–4</td><td class="num">360–600 m² đất</td><td class="num">48–60%</td></tr>
+        <tr><td><strong>Ocean Front Condominium</strong></td><td>Căn hộ dịch vụ</td><td class="num">203</td><td class="num">8</td><td class="num">34–113 m²</td><td class="num">60%</td></tr>
+        <tr><td><strong>Ocean Front AquaMarine</strong></td><td>Căn hộ suite</td><td class="num">169 + 1 PH</td><td class="num">9</td><td class="num">49–142 m²</td><td class="num">75%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Cấu hình biệt thự đang khai thác</h3>
+  <p>
+    Theo đầu mối cho thuê <code class="mono">anhnguyenvillas.com</code>, chỉ <strong>14 trong 79 căn</strong>
+    xuất hiện công khai.<span class="ref"><a href="#r12">12</a></span> 65 căn còn lại hoặc chưa xây,
+    hoặc chủ tự ở, hoặc cho thuê qua kênh khác — không có nguồn công khai nào cho biết tỷ lệ.
+    <span class="lb lb--i">Suy luận</span>
+  </p>
+
+  <div class="stats">
+    <div class="stat"><p class="stat__label">Diện tích sàn</p><div class="stat__value">420–1.300<span class="stat__unit">m²</span></div></div>
+    <div class="stat"><p class="stat__label">Số phòng ngủ</p><div class="stat__value">4–7<span class="stat__unit">PN</span></div></div>
+    <div class="stat"><p class="stat__label">Sức chứa</p><div class="stat__value">8–16<span class="stat__unit">khách</span></div></div>
+    <div class="stat"><p class="stat__label">Căn công khai / tổng</p><div class="stat__value">14<span class="stat__unit">/ 79</span></div></div>
+  </div>
+
+  <p>
+    Phong cách kiến trúc đặt tên: <em>Timber House</em> · <em>Stone House</em> · <em>Villa Sky</em>.
+    Mã căn xuất hiện công khai: <code class="mono">B1</code> <code class="mono">B2</code>
+    <code class="mono">B8</code> <code class="mono">B29</code> → hệ mã <strong>“B” + số</strong>.
+  </p>
+
+  <div class="callout callout--warn">
+    <span class="callout__label">Cảnh báo về danh sách tiện ích</span>
+    <p>
+      Các nguồn công khai liệt kê: bãi biển riêng · hồ bơi vô cực 102 m trên mái · gym ·
+      sân tennis · rạp chiếu phim · nhà hàng · rooftop sky bar · sauna · karaoke · BBQ ·
+      an ninh 24/7 · smart home.<span class="ref"><a href="#r2">2</a><a href="#r15">15</a></span>
+    </p>
+    <p>
+      Nhưng các nguồn này <strong>trộn lẫn tiện ích đã vận hành với tiện ích trong quy hoạch
+      tương lai</strong>, không phân biệt. Với một dự án đã kéo dài 20 năm, khoảng cách giữa
+      hai loại có thể rất lớn. <strong>Cần đi thực địa lập danh sách hai cột:
+      <em>đang hoạt động</em> vs <em>chưa có</em>.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════ 05 ══════════════════ -->
+<section id="s05">
+  <div class="sec-head"><span class="sec-head__num">05</span><h2>Pháp lý &amp; rủi ro</h2></div>
+  <p>Đây là phần quan trọng nhất về mặt quản trị rủi ro vận hành.</p>
+
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 5.1</b> — Ma trận rủi ro</caption>
+      <thead><tr><th>#</th><th>Rủi ro</th><th>Mức độ</th><th>Loại</th><th>Nguồn</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">R1</td><td><strong>Nguy cơ sạt lở sườn núi</strong></td><td><span class="chip chip--crit"><i></i>Cao</span></td><td>Vận hành + an toàn</td><td class="mono"><a href="#r9">[9]</a> <a href="#r8">[8]</a></td></tr>
+        <tr><td class="mono">R2</td><td>Chuyển đổi đất rừng phòng hộ</td><td><span class="chip chip--ser"><i></i>Trung bình</span></td><td>Pháp lý + truyền thông</td><td class="mono"><a href="#r8">[8]</a> <a href="#r5">[5]</a></td></tr>
+        <tr><td class="mono">R3</td><td>Vi phạm khai thác khoáng sản</td><td><span class="chip chip--ser"><i></i>Trung bình</span></td><td>Pháp lý</td><td class="mono"><a href="#r7">[7]</a></td></tr>
+        <tr><td class="mono">R4</td><td>Bán hàng khi chưa đủ pháp lý</td><td><span class="chip chip--ser"><i></i>Trung bình</span></td><td>Pháp lý + uy tín</td><td class="mono"><a href="#r8">[8]</a></td></tr>
+        <tr><td class="mono">R5</td><td>Mâu thuẫn thông tin về sổ đỏ</td><td><span class="chip chip--unk"><i></i>Chưa xác định</span></td><td>Pháp lý</td><td class="mono"><a href="#r3">[3]</a> <a href="#r5">[5]</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>R1 · Nguy cơ sạt lở <span class="lb lb--v">Xác minh</span></h3>
+  <p>
+    Dự án nằm trên sườn núi Chụt. Sở KH&amp;ĐT Khánh Hoà đã đưa dự án vào nhóm các dự án
+    ven sườn núi <strong>phải tạm dừng để rà soát</strong>.<span class="ref"><a href="#r9">9</a></span>
+  </p>
+  <p>
+    <strong>Bối cảnh:</strong> Nha Trang năm 2018 từng có sự cố sạt lở làm nhiều người chết,
+    khiến tỉnh siết chặt quản lý nhóm dự án đồi núi. Báo chí đã trực tiếp liên hệ tiền lệ này
+    khi viết về dự án Anh Nguyễn.<span class="ref"><a href="#r8">8</a></span>
+    Làm nặng thêm rủi ro: quá trình phát triển đã đào bóc khối lượng lớn đất đá trên sườn núi,
+    và các lần điều chỉnh đều theo hướng tăng mật độ xây dựng.
+  </p>
+
+  <div class="callout callout--alert">
+    <span class="callout__label">Hàm ý vận hành — đây không phải vấn đề giấy tờ</span>
+    <p>Đây phải là hạng mục rủi ro thường trực trong hệ thống, với:</p>
+    <ul style="margin-bottom:0">
+      <li>Lịch kiểm tra định kỳ: kè chắn, taluy, hệ thống thoát nước mặt</li>
+      <li>Tần suất tăng cường trong <strong>mùa mưa bão tháng 9–12</strong></li>
+      <li>Quy trình ứng phó khi có cảnh báo bão / mưa lớn</li>
+      <li>Ghi nhận mọi dấu hiệu: nứt tường chắn, sụt lún đường, nước chảy bất thường</li>
+    </ul>
+  </div>
+
+  <h3>R3 · Vi phạm khai thác khoáng sản <span class="lb lb--v">Xác minh</span></h3>
+  <div class="stats">
+    <div class="stat stat--flag"><p class="stat__label">Đất đá chuyển ra ngoài không phép</p><div class="stat__value">40.000<span class="stat__unit">m³</span></div></div>
+    <div class="stat"><p class="stat__label">Còn lại chưa đào</p><div class="stat__value">14.115<span class="stat__unit">m³</span></div></div>
+    <div class="stat"><p class="stat__label">Thời điểm kiến nghị</p><div class="stat__value">01/2022</div><p class="stat__note">Sở TN&amp;MT Khánh Hoà</p></div>
+  </div>
+  <p>
+    Kiến nghị bao gồm xử phạt hành chính và truy thu phí khoáng sản, phí bảo vệ môi trường,
+    thuế tài nguyên.<span class="ref"><a href="#r7">7</a></span>
+    <strong>Không tìm thấy thông tin về kết quả xử lý</strong> — không rõ đã bị phạt chưa
+    và mức bao nhiêu.
+  </p>
+
+  <h3>R5 · Ba nguồn mâu thuẫn về tình trạng sổ</h3>
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 5.2</b> — So sánh thông tin pháp lý sản phẩm từ ba nguồn</caption>
+      <thead><tr><th>Nguồn</th><th>Nội dung</th><th>Độ tin cậy</th></tr></thead>
+      <tbody>
+        <tr><td>Website bán hàng 2026<span class="ref"><a href="#r2">2</a></span></td><td>Sở hữu <strong>lâu dài</strong>, khác với đất thương mại dịch vụ 50 năm phổ biến ven biển Nha Trang</td><td><span class="lb lb--m">Marketing</span></td></tr>
+        <tr><td>CafeLand<span class="ref"><a href="#r3">3</a></span></td><td>Đã có sổ, đủ điều kiện thế chấp; <strong>một số lô đã được thế chấp</strong></td><td><span class="lb lb--s">Một nguồn</span></td></tr>
+        <tr><td>Báo Đầu tư<span class="ref"><a href="#r5">5</a></span></td><td>27/04/2017 mới cấp sổ cho <strong>8 lô</strong> trên tổng 79</td><td><span class="lb lb--v">Xác minh</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--alert">
+    <span class="callout__label">Khuyến nghị</span>
+    <p>Ba nguồn này không thống nhất với nhau. Nếu pháp lý là yếu tố quan trọng —
+    đặc biệt nếu đang là chủ sở hữu hoặc cân nhắc đầu tư — <strong>bắt buộc phải kiểm tra
+    hồ sơ gốc</strong> (sổ đỏ, giấy phép xây dựng, biên bản nghiệm thu), không dựa vào
+    thông tin trên mạng.</p>
+  </div>
+
+  <h4>Rủi ro chưa đánh giá được</h4>
+  <ul>
+    <li>Đã từng xảy ra sự cố sạt lở, ngập, hư hại do mưa bão tại khu này chưa?</li>
+    <li>Kết quả rà soát nguy cơ sạt lở — dự án đã được phép tiếp tục chưa?</li>
+    <li>Ràng buộc với ban quản lý khu: phí quản lý, quy chế nội khu, hạn chế cho thuê ngắn ngày?</li>
+    <li>Bảo hiểm tài sản và bảo hiểm trách nhiệm hiện ở mức nào?</li>
+  </ul>
+</section>
+
+<!-- ══════════════════ 06 ══════════════════ -->
+<section id="s06">
+  <div class="sec-head"><span class="sec-head__num">06</span><h2>Mô hình vận hành</h2></div>
+  <p><strong>Đây là phần có ảnh hưởng lớn nhất tới thiết kế hệ thống.</strong></p>
+
+  <figure>
+    <h4>Mô hình giả định so với mô hình thực tế</h4>
+    <p class="fig-sub">Bên trái: resort tập trung có một ban điều hành. Bên phải: thực tế quan sát được.</p>
+    <div class="diagram"><svg id="d1" viewBox="0 0 680 340" role="img" aria-label="Sơ đồ so sánh: mô hình resort tập trung có một ban điều hành duy nhất, đối lập với thực tế 79 biệt thự sở hữu riêng lẻ cho thuê qua sáu đầu mối độc lập">
+      <line class="divide" x1="340" y1="10" x2="340" y2="320"/>
+
+      <!-- ── Trái: mô hình giả định ── -->
+      <text class="t-ink3" x="165" y="24" font-size="11" font-weight="700">MÔ HÌNH GIẢ ĐỊNH</text>
+      <text class="t-ink2" x="165" y="40" font-size="13" font-weight="650">Resort tập trung</text>
+
+      <rect class="bx" x="70" y="58" width="190" height="42" rx="4"/>
+      <text class="t-ink"  x="165" y="76" font-size="13" font-weight="650">79 biệt thự</text>
+      <text class="t-ink3" x="165" y="92" font-size="11">một chủ thể vận hành</text>
+
+      <path class="flow" d="M165,100 V132"/>
+      <path class="arrow" d="M161,126 L165,134 L169,126 Z"/>
+
+      <rect class="bx-acc" x="70" y="134" width="190" height="46" rx="4"/>
+      <text class="t-acc" x="165" y="154" font-size="13" font-weight="700">Một ban điều hành</text>
+      <text class="t-acc" x="165" y="170" font-size="10.5">PMS · POS · chỉ số chung</text>
+
+      <path class="flow" d="M165,180 V212"/>
+      <path class="arrow" d="M161,206 L165,214 L169,206 Z"/>
+
+      <rect class="bx" x="70" y="214" width="190" height="42" rx="4"/>
+      <text class="t-ink2" x="165" y="240" font-size="11.5" font-weight="600">Kênh phân phối thống nhất</text>
+
+      <text class="t-good" x="165" y="300" font-size="11" font-weight="600">Chỉ số toàn khu tổng hợp được</text>
+      <text class="t-ink3" x="165" y="316" font-size="10.5">Dữ liệu lấy qua API</text>
+
+      <!-- ── Phải: thực tế quan sát được ── -->
+      <text class="t-crit" x="510" y="24" font-size="11" font-weight="700">THỰC TẾ QUAN SÁT ĐƯỢC</text>
+      <text class="t-ink2" x="510" y="40" font-size="13" font-weight="650">Cho thuê phân mảnh</text>
+
+      <rect class="bx" x="415" y="58" width="190" height="42" rx="4"/>
+      <text class="t-ink"  x="510" y="76" font-size="13" font-weight="650">79 biệt thự</text>
+      <text class="t-ink3" x="510" y="92" font-size="11">sở hữu riêng lẻ</text>
+
+      <path class="fan" d="M510,100 C510,122 370,122 370,140"/>
+      <path class="fan" d="M510,100 C510,122 426,122 426,140"/>
+      <path class="fan" d="M510,100 C510,122 482,122 482,140"/>
+      <path class="fan" d="M510,100 C510,122 538,122 538,140"/>
+      <path class="fan" d="M510,100 C510,122 594,122 594,140"/>
+      <path class="fan" d="M510,100 C510,122 646,122 646,140"/>
+
+      <circle class="dot" cx="370" cy="146" r="5"/>
+      <circle class="dot" cx="426" cy="146" r="5"/>
+      <circle class="dot" cx="482" cy="146" r="5"/>
+      <circle class="dot" cx="538" cy="146" r="5"/>
+      <circle class="dot" cx="594" cy="146" r="5"/>
+      <circle class="dot" cx="646" cy="146" r="5"/>
+
+      <line class="tick" x1="426" y1="152" x2="426" y2="180"/>
+      <line class="tick" x1="538" y1="152" x2="538" y2="180"/>
+      <line class="tick" x1="646" y1="152" x2="646" y2="180"/>
+
+      <text class="t-ink2" x="370" y="165" font-size="8.5" font-weight="600">anhnguyenvillas</text>
+      <text class="t-ink3" x="370" y="176" font-size="8">14 căn</text>
+      <text class="t-ink2" x="482" y="165" font-size="8.5" font-weight="600">vila.com.vn</text>
+      <text class="t-ink3" x="482" y="176" font-size="8">căn B8</text>
+      <text class="t-ink2" x="594" y="165" font-size="8.5" font-weight="600">Facebook</text>
+      <text class="t-ink3" x="594" y="176" font-size="8">fanpage</text>
+
+      <text class="t-ink2" x="426" y="192" font-size="8.5" font-weight="600">thuevilla.com</text>
+      <text class="t-ink3" x="426" y="203" font-size="8">sàn cho thuê</text>
+      <text class="t-ink2" x="538" y="192" font-size="8.5" font-weight="600">villanhatrang</text>
+      <text class="t-ink3" x="538" y="203" font-size="8">đã hết hạn</text>
+      <text class="t-ink2" x="646" y="192" font-size="8.5" font-weight="600">Booking.com</text>
+      <text class="t-ink3" x="646" y="203" font-size="8">≥ 2 listing</text>
+
+      <rect class="bx-crit" x="370" y="214" width="280" height="58" rx="4"/>
+      <text class="t-crit" x="510" y="234" font-size="12.5" font-weight="700">Không có ban điều hành chung</text>
+      <text class="t-ink2" x="510" y="250" font-size="10.5">Không có PMS · mỗi căn một đầu mối</text>
+      <text class="t-ink2" x="510" y="264" font-size="10.5">Dữ liệu không tự tổng hợp được</text>
+
+      <text class="t-crit" x="510" y="300" font-size="11" font-weight="600">Chỉ số toàn khu KHÔNG tổng hợp được</text>
+      <text class="t-ink3" x="510" y="316" font-size="10.5">Phải nhập tay / import Excel</text>
+    </svg></div>
+    <figcaption>Tổng hợp từ khảo sát các kênh phân phối công khai<span class="ref"><a href="#r12">12</a><a href="#r13">13</a><a href="#r14">14</a><a href="#r16">16</a></span> · <span class="lb lb--v">Xác minh</span></figcaption>
+  </figure>
+
+  <h3>Không có đơn vị quản lý khách sạn thống nhất</h3>
+  <p>Không tìm thấy bất kỳ dấu hiệu nào của:</p>
+  <ul>
+    <li>Thương hiệu vận hành khách sạn quốc tế (Marriott, Accor, IHG, Hyatt…)</li>
+    <li>Công ty quản lý resort chuyên nghiệp trong nước</li>
+    <li>Một ban điều hành chung cho toàn khu 79 căn</li>
+  </ul>
+  <p>
+    Để so sánh: các dự án cùng địa bàn Khánh Hoà đã có Marriott, Sheraton, InterContinental,
+    Best Western, Six Senses, Radisson Blu, Mövenpick.<span class="ref"><a href="#r17">17</a></span>
+    Việc dự án này không có thương hiệu vận hành nào là <strong>đáng chú ý, không phải bình thường</strong>.
+  </p>
+
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 6.1</b> — Các đầu mối cho thuê quan sát được</caption>
+      <thead><tr><th>Đầu mối</th><th class="num">Quy mô</th><th>Đặc điểm</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">anhnguyenvillas.com</td><td class="num">14 căn</td><td>Liên hệ cá nhân — số điện thoại di động + Gmail<span class="ref"><a href="#r12">12</a></span></td></tr>
+        <tr><td class="mono">thuevilla.com</td><td class="num">—</td><td>“Biệt thự Anh Nguyễn 3-4-5 PN cho thuê rẻ”<span class="ref"><a href="#r16">16</a></span></td></tr>
+        <tr><td class="mono">vila.com.vn</td><td class="num">Căn B8</td><td>Sàn cho thuê</td></tr>
+        <tr><td class="mono">villanhatrang.com</td><td class="num">Căn B29</td><td><span class="chip chip--crit"><i></i>Tên miền đã hết hạn</span></td></tr>
+        <tr><td>Fanpage Facebook</td><td class="num">—</td><td>“Anh Nguyễn Ocean Front Villas Nha Trang”</td></tr>
+        <tr><td class="mono">Booking.com</td><td class="num">≥ 2 listing</td><td><strong>Listing riêng lẻ theo từng căn</strong>, không phải một property chung<span class="ref"><a href="#r13">13</a><a href="#r14">14</a></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    Bằng chứng rõ nhất: trên Booking.com, các căn xuất hiện như <strong>những property độc lập</strong>
+    với tên khác nhau, mỗi cái có điểm và số review riêng — chứ không phải các hạng phòng
+    trong cùng một property.
+  </p>
+
+  <h3>Hệ quả cho thiết kế hệ thống</h3>
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 6.2</b> — Đặc điểm thực tế và hệ quả thiết kế</caption>
+      <thead><tr><th>Đặc điểm thực tế</th><th>Hệ quả thiết kế</th></tr></thead>
+      <tbody>
+        <tr><td>Không có PMS / POS trung tâm</td><td>Nguồn dữ liệu đo lường gần như chắc chắn <strong>không có API</strong>. Phải thiết kế đường nhập tay / import Excel làm <strong>đường chính</strong>, không phải phương án dự phòng</td></tr>
+        <tr><td>Mỗi căn một đầu mối</td><td>Chỉ số toàn khu (OCC, ADR, RevPAR) <strong>không tự tổng hợp được</strong> nếu chưa thống nhất cách thu thập</td></tr>
+        <tr><td>Đội ngũ nhỏ</td><td>Cơ cấu <strong>12 bộ phận</strong> trong thiết kế gốc gần như chắc chắn quá lớn. Một đơn vị quản lý 14 villa thường có 10–30 người</td></tr>
+        <tr><td>Phụ thuộc OTA + kênh cá nhân</td><td>Chất lượng phân phối online yếu — xem <a href="#s08">mục 08</a>. Có thể là cơ hội cải thiện rõ rệt nhất</td></tr>
+        <tr><td>Tiện ích chung do chủ đầu tư quản</td><td><strong>Không kiểm soát</strong> chất lượng hồ bơi chung, an ninh, cảnh quan — nhưng khách vẫn đánh giá dựa trên chúng. Cần cơ chế ghi nhận và phản ánh lên ban quản lý khu</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Bốn kịch bản phạm vi</h3>
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 6.3</b> — Thiết kế hệ thống thay đổi theo phạm vi quản lý thực tế</caption>
+      <thead><tr><th>Kịch bản</th><th class="num">Quy mô đội</th><th>Thiết kế phù hợp</th></tr></thead>
+      <tbody>
+        <tr><td><strong>(a)</strong> 1–3 căn tự khai thác</td><td class="num">3–8 người</td><td>Rất gọn: 1 quản lý + lễ tân + buồng phòng + kỹ thuật</td></tr>
+        <tr><td><strong>(b)</strong> Đơn vị quản lý ~14 căn</td><td class="num">15–40 người</td><td>Trung bình: 4–6 bộ phận, có cấp trung gian</td></tr>
+        <tr><td><strong>(c)</strong> Toàn khu 79 căn</td><td class="num">100+ người</td><td>Gần với thiết kế gốc</td></tr>
+        <tr><td><strong>(d)</strong> Phía chủ đầu tư</td><td class="num">Khác hẳn</td><td>Trọng tâm là BĐS + bán hàng, không phải vận hành lưu trú</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════════ 07 ══════════════════ -->
+<section id="s07">
+  <div class="sec-head"><span class="sec-head__num">07</span><h2>Kinh tế vận hành</h2></div>
+
+  <div class="callout callout--alert">
+    <span class="callout__label">Cảnh báo trước khi đọc</span>
+    <p>Toàn bộ số liệu trong mục này là <strong>giá niêm yết trên các sàn cho thuê</strong>,
+    không phải giá giao dịch thực. Trong phân khúc villa cho thuê tại Việt Nam, mức chiết khấu
+    thực tế so với giá niêm yết thường rất lớn.
+    <strong>Không dùng các con số này làm cơ sở tính doanh thu hay lập ngân sách.</strong></p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 7.1</b> — Giá cho thuê niêm yết <span class="lb lb--s">Một nguồn</span></caption>
+      <thead><tr><th>Hình thức</th><th>Cấu hình</th><th class="num">Giá niêm yết</th><th>Nguồn</th></tr></thead>
+      <tbody>
+        <tr><td>Theo đêm</td><td>3–9 phòng ngủ</td><td class="num">5 – 15 triệu đ/đêm</td><td class="mono"><a href="#r16">[16]</a></td></tr>
+        <tr><td>Theo tháng</td><td>4–6 phòng ngủ</td><td class="num">100 – 150 triệu đ/tháng</td><td class="mono"><a href="#r15">[15]</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 7.2</b> — Giá bán: hai nguồn mâu thuẫn <span class="lb lb--s">Một nguồn</span></caption>
+      <thead><tr><th>Nguồn</th><th class="num">Mức giá</th><th class="num">Quy đổi cho lô 360–600 m²</th></tr></thead>
+      <tbody>
+        <tr><td>CafeLand<span class="ref"><a href="#r3">3</a></span></td><td class="num">60 – 80 triệu đ/m²</td><td class="num">21,6 – 48,0 tỷ đ</td></tr>
+        <tr><td>Crystal Bay<span class="ref"><a href="#r15">15</a></span></td><td class="num">40 – 60 tỷ đ/căn</td><td class="num">40,0 – 60,0 tỷ đ</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Hai khoảng này chồng lấn một phần nhưng lệch đáng kể. Có thể do một nguồn tính theo đất,
+    nguồn kia tính cả công trình. <strong>Coi cả hai là tham khảo.</strong>
+  </p>
+
+  <figure>
+    <h4>Ước tính doanh thu: thuê đêm so với thuê tháng</h4>
+    <p class="fig-sub">Một căn 4 phòng ngủ, doanh thu gộp năm. Phép tính bậc độ lớn, không phải dự báo.</p>
+    <div class="chart-wrap"><svg id="c5" viewBox="0 0 680 220" role="img" aria-label="Biểu đồ thanh so sánh ba kịch bản doanh thu năm: thuê đêm theo giá niêm yết 1,28 tỷ; thuê đêm sau chiết khấu 0,9 tỷ; thuê tháng 1,44 tỷ đồng">
+      <line x1="250" y1="14" x2="250" y2="58" class="ax"/>
+      <path d="M250,20H518a4,4 0 0 1 4,4v24a4,4 0 0 1 -4,4H250Z" class="s1"/>
+      <text x="238" y="34" text-anchor="end" font-size="12" font-weight="650" class="b i0">Thuê đêm — giá niêm yết</text>
+      <text x="238" y="49" text-anchor="end" font-size="10.5" font-weight="400" class="b i3">7 tr/đêm · OCC 50%</text>
+      <text x="534" y="41" text-anchor="start" font-size="13.5" font-weight="700" class="m i0">1,28 tỷ đ</text>
+      <line x1="250" y1="68" x2="250" y2="112" class="ax"/>
+      <path d="M250,74H437.25a4,4 0 0 1 4,4v24a4,4 0 0 1 -4,4H250Z" class="s1"/>
+      <text x="238" y="88" text-anchor="end" font-size="12" font-weight="650" class="b i0">Thuê đêm — sau chiết khấu 30%</text>
+      <text x="238" y="103" text-anchor="end" font-size="10.5" font-weight="400" class="b i3">kịch bản thực tế hơn</text>
+      <text x="453.25" y="95" text-anchor="start" font-size="13.5" font-weight="700" class="m i0">0,90 tỷ đ</text>
+      <line x1="250" y1="122" x2="250" y2="166" class="ax"/>
+      <path d="M250,128H552a4,4 0 0 1 4,4v24a4,4 0 0 1 -4,4H250Z" class="s3"/>
+      <text x="238" y="142" text-anchor="end" font-size="12" font-weight="650" class="b i0">Thuê tháng</text>
+      <text x="238" y="157" text-anchor="end" font-size="10.5" font-weight="400" class="b i3">120 tr/tháng × 12</text>
+      <text x="568" y="149" text-anchor="start" font-size="13.5" font-weight="700" class="m i0">1,44 tỷ đ</text>
+    </svg></div>
+    <figcaption>
+      Giả định: giá niêm yết 7 triệu đ/đêm · công suất 50% · chiết khấu thực tế 30% ·
+      thuê tháng 120 triệu đ × 12. <span class="lb lb--i">Suy luận</span> — mọi giả định chưa được kiểm chứng.
+    </figcaption>
+  </figure>
+
+  <p>
+    Thuê tháng cho doanh thu cao hơn và ổn định hơn <em>trên giấy</em>, nhưng mất hoàn toàn
+    biên lợi nhuận mùa cao điểm — khi giá đêm có thể gấp 2–3 lần. Đổi lại: chi phí vận hành
+    thấp hơn nhiều (ít lượt dọn, ít check-in, ít hoa hồng OTA), nhưng rủi ro tập trung vào
+    một khách thuê.
+  </p>
+
+  <div class="callout">
+    <span class="callout__label">Đây là quyết định chiến lược thực sự</span>
+    <p>Đúng loại quyết định mà hệ thống RMA được thiết kế để hỗ trợ. Nhưng cần
+    <strong>dữ liệu thật</strong> mới trả lời được, không phải giá niêm yết.</p>
+  </div>
+
+  <h3>Chi phí — hoàn toàn không có dữ liệu</h3>
+  <p>Không tìm thấy bất kỳ thông tin công khai nào về: phí quản lý khu · chi phí nhân sự ·
+  điện nước (biệt thự có hồ bơi riêng → chi phí điện đáng kể) · bảo trì (đặc thù sườn núi,
+  khí hậu biển ăn mòn) · hoa hồng OTA (thường 15–20%) · marketing.
+  <strong>Không thể tính được biên lợi nhuận từ nguồn công khai.</strong></p>
+</section>
+
+<!-- ══════════════════ 08 ══════════════════ -->
+<section id="s08">
+  <div class="sec-head"><span class="sec-head__num">08</span><h2>OTA &amp; đánh giá khách</h2></div>
+
+  <div class="stats">
+    <div class="stat"><p class="stat__label">Nha Trang Oceanfront Luxury Villa</p><div class="stat__value">9,8<span class="stat__unit">/ 10</span></div><p class="stat__note">6 lượt đánh giá</p></div>
+    <div class="stat"><p class="stat__label">Anh Nguyen Oceanfront Luxury Villas</p><div class="stat__value">10<span class="stat__unit">/ 10</span></div><p class="stat__note">Rất ít lượt</p></div>
+    <div class="stat"><p class="stat__label">Điểm nhân viên</p><div class="stat__value">10,0<span class="stat__unit">/ 10</span></div><p class="stat__note">Điểm thành phần cao nhất</p></div>
+    <div class="stat stat--flag"><p class="stat__label">Tổng số review khai thác được</p><div class="stat__value">6</div><p class="stat__note">Dưới ngưỡng có ý nghĩa thống kê</p></div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 8.1</b> — Điểm thành phần trên Booking.com <span class="lb lb--v">Xác minh</span> · Nguồn <span class="ref"><a href="#r14">14</a></span></caption>
+      <thead><tr><th>Tiêu chí</th><th class="num">Điểm</th></tr></thead>
+      <tbody>
+        <tr><td>Nhân viên</td><td class="num">10,0</td></tr>
+        <tr><td>Sạch sẽ</td><td class="num">9,8</td></tr>
+        <tr><td>Tiện nghi</td><td class="num">9,8</td></tr>
+        <tr><td>Vị trí</td><td class="num">9,8</td></tr>
+        <tr><td>Cơ sở vật chất</td><td class="num">9,8</td></tr>
+        <tr><td>Đáng tiền</td><td class="num">9,8</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    <strong>Khách khen:</strong> phù hợp nhóm đông, hồ bơi riêng đẹp, hồ bơi vô cực có khu
+    râm mát, vị trí bãi biển riêng.<br>
+    <strong>Khách chê:</strong> không tìm thấy phàn nàn nào công khai — nhưng với 6 review
+    thì điều này <strong>không có ý nghĩa thống kê</strong>.
+  </p>
+
+  <h3>Ba cách giải thích, đều dẫn tới cùng một kết luận</h3>
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 8.2</b> — Giả thuyết và hàm ý <span class="lb lb--i">Suy luận</span></caption>
+      <thead><tr><th>Giả thuyết</th><th>Hàm ý</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1.</strong> Sản phẩm tốt nhưng phân phối online yếu</td><td>Cơ hội tăng trưởng rõ nhất — cải thiện bằng vận hành, không cần đầu tư lớn</td></tr>
+        <tr><td><strong>2.</strong> Kênh bán chủ yếu là trực tiếp / Zalo / Facebook / môi giới</td><td>OTA chỉ là kênh phụ; số liệu OTA không đại diện cho hoạt động thật</td></tr>
+        <tr><td><strong>3.</strong> Listing mới mở hoặc phân tán qua nhiều tài khoản</td><td>Cùng một căn có review nằm rải rác ở nhiều listing khác nhau</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__label">Hàm ý cho bộ chỉ số</span>
+    <p>Nếu đưa NPS hoặc điểm review vào bộ chỉ số ngay bây giờ, hệ thống sẽ đo một chỉ số
+    <strong>không có ý nghĩa thống kê</strong> — một review xấu duy nhất sẽ kéo điểm từ
+    9,8 xuống khoảng 8,6.</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 8.3</b> — Thứ tự đúng để triển khai chỉ số trải nghiệm khách</caption>
+      <thead><tr><th class="num">GĐ</th><th>Mục tiêu</th><th>Chỉ số</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td><strong>Tăng số lượng review</strong></td><td>Số review/tháng · tỷ lệ khách để lại review</td></tr>
+        <tr><td class="num">2</td><td>Ổn định chất lượng</td><td>Điểm trung bình · điểm thành phần thấp nhất</td></tr>
+        <tr><td class="num">3</td><td>Tối ưu</td><td>NPS · tỷ lệ khách quay lại</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Đảo ngược thứ tự này — tối ưu điểm số khi chưa có đủ mẫu — là sai lầm phổ biến.</p>
+</section>
+
+<!-- ══════════════════ 09 ══════════════════ -->
+<section id="s09">
+  <div class="sec-head"><span class="sec-head__num">09</span><h2>Thị trường du lịch Khánh Hoà</h2></div>
+
+  <div class="stats">
+    <div class="stat"><p class="stat__label">Tổng lượt khách 2025</p><div class="stat__value">16,4<span class="stat__unit">triệu</span></div><p class="stat__delta stat__delta--up">▲ 14,4%</p></div>
+    <div class="stat"><p class="stat__label">Khách quốc tế</p><div class="stat__value">5,5<span class="stat__unit">triệu</span></div><p class="stat__delta stat__delta--up">▲ 13,4%</p></div>
+    <div class="stat"><p class="stat__label">Doanh thu du lịch</p><div class="stat__value">66,7<span class="stat__unit">nghìn tỷ đ</span></div><p class="stat__delta stat__delta--up">▲ 16,8%</p></div>
+    <div class="stat"><p class="stat__label">Công suất phòng Tết 2025</p><div class="stat__value">~82<span class="stat__unit">%</span></div><p class="stat__note">Mùng 2 – mùng 5</p></div>
+  </div>
+  <p style="font-size:13px;color:var(--ink-3)">
+    Nguồn: Báo Khánh Hoà<span class="ref"><a href="#r17">17</a></span>,
+    Bộ VHTTDL<span class="ref"><a href="#r18">18</a></span> · <span class="lb lb--v">Xác minh</span>.
+    Mục tiêu đặt đầu năm 2025 là 11,8 triệu lượt<span class="ref"><a href="#r19">19</a></span> — thực tế <strong>vượt xa kế hoạch</strong>.
+  </p>
+
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 9.1</b> — Nguồn cung lưu trú toàn tỉnh <span class="lb lb--v">Xác minh</span></caption>
+      <thead><tr><th>Chỉ số</th><th class="num">Giá trị</th></tr></thead>
+      <tbody>
+        <tr><td>Tổng số cơ sở lưu trú</td><td class="num">1.441</td></tr>
+        <tr><td>Tổng số phòng</td><td class="num">&gt; 70.500</td></tr>
+        <tr><td>Cơ sở hạng 3–5 sao</td><td class="num">107</td></tr>
+        <tr><td>Số phòng 3–5 sao</td><td class="num">28.296 <span style="color:var(--ink-3)">(&gt;40% tổng cung)</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    Thương hiệu quốc tế đã có mặt: Marriott · Sheraton · InterContinental · Best Western ·
+    Six Senses · Radisson Blu · Mövenpick.
+  </p>
+
+  <h3>Đọc gì từ những con số này</h3>
+
+  <div class="cards cards--2">
+    <div class="card">
+      <h4 style="margin-top:0">Thị trường đang tăng trưởng tốt</h4>
+      <p style="font-size:14.5px;color:var(--ink-2);margin:0">
+        Cả lượng khách lẫn doanh thu đều tăng hai chữ số và vượt kế hoạch.
+        <strong>Nếu kinh doanh đang khó khăn thì nguyên nhân nằm ở nội bộ hoặc vị thế cạnh tranh,
+        không phải ở thị trường.</strong> Kết luận này loại bỏ “thị trường khó” như một
+        lời giải thích mặc định.
+      </p>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0">Cạnh tranh cao cấp rất gay gắt</h4>
+      <p style="font-size:14.5px;color:var(--ink-2);margin:0">
+        28.296 phòng hạng 3–5 sao, hơn 40% tổng cung, với hầu hết thương hiệu quốc tế lớn.
+        Cạnh tranh trực diện về “dịch vụ khách sạn cao cấp” là <strong>cuộc chiến không nên chọn</strong>.
+        <span class="lb lb--i">Suy luận</span>
+      </p>
+    </div>
+  </div>
+
+  <h4>Lợi thế khác biệt nằm ở đâu</h4>
+  <p>Thứ mà một biệt thự 4–7 phòng ngủ có mà khách sạn 5 sao không có:</p>
+  <ul>
+    <li><strong>Không gian riêng tư cho nhóm đông</strong> — cả nhóm ở chung một nhà, không phải nhiều phòng rời</li>
+    <li><strong>Hồ bơi riêng</strong> — không chia sẻ với khách lạ</li>
+    <li><strong>Bếp riêng, khu BBQ, không gian sinh hoạt chung</strong> — phù hợp gia đình nhiều thế hệ, nhóm bạn, sự kiện nhỏ</li>
+    <li><strong>Toàn quyền sử dụng</strong> trong thời gian lưu trú</li>
+  </ul>
+  <p>Đây là nơi nên đặt định vị và nơi nên đầu tư cải thiện — không phải cố mô phỏng dịch vụ khách sạn.</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__label">Hai rủi ro chồng lên nhau</span>
+    <p>Công suất Tết ~82% cho thấy cao điểm rất mạnh, nhưng <strong>không có dữ liệu mùa thấp</strong> —
+    mà đó mới là chỗ quyết định lợi nhuận cả năm. Với thị trường Nha Trang, mùa thấp thường rơi vào
+    <strong>tháng 9–12</strong> — trùng với mùa mưa bão, cũng là lúc <strong>rủi ro sạt lở cao nhất</strong>
+    (<a href="#s05">mục 05</a>). <span class="lb lb--i">Suy luận</span></p>
+  </div>
+</section>
+
+<!-- ══════════════════ 10 ══════════════════ -->
+<section id="s10">
+  <div class="sec-head"><span class="sec-head__num">10</span><h2>Khoảng trống thông tin</h2></div>
+  <p>
+    Những thông tin dưới đây <strong>không thể tìm thấy công khai</strong> và ảnh hưởng
+    trực tiếp tới thiết kế hệ thống. Cần chủ dự án trả lời.
+  </p>
+
+  <div class="qgroup">
+    <div class="qgroup__head">
+      <span class="chip chip--crit"><i></i>Chặn</span>
+      <h3>Nhóm A — Phạm vi</h3>
+    </div>
+    <div class="qgroup__body">
+      <p style="font-size:13.5px;color:var(--ink-2);max-width:none;margin-bottom:8px">
+        Nhóm quan trọng nhất. Chưa có câu trả lời thì mọi thiết kế đều là phỏng đoán.
+      </p>
+      <div class="q"><span class="q__id">A1</span><div>
+        <p class="q__q">Phạm vi quản lý là gì?</p>
+        <p class="q__why">(a) 1–3 căn · (b) đơn vị quản lý ~14 căn · (c) toàn khu 79 căn · (d) phía chủ đầu tư · (e) khác</p></div></div>
+      <div class="q"><span class="q__id">A2</span><div>
+        <p class="q__q">Bao nhiêu căn, mã căn nào?</p>
+        <p class="q__why">Hệ mã công khai đang là B1, B2, B8, B29…</p></div></div>
+      <div class="q"><span class="q__id">A3</span><div>
+        <p class="q__q">Quan hệ pháp lý với các căn đó?</p>
+        <p class="q__why">Chủ sở hữu · thuê lại để khai thác · nhận uỷ thác quản lý. Quyết định việc kiểm soát được gì: uỷ thác thì không tự quyết đầu tư cải tạo; thuê lại thì chịu toàn bộ rủi ro công suất</p></div></div>
+    </div>
+  </div>
+
+  <div class="qgroup">
+    <div class="qgroup__head">
+      <span class="chip chip--ser"><i></i>Quan trọng</span>
+      <h3>Nhóm B — Vận hành</h3>
+    </div>
+    <div class="qgroup__body">
+      <div class="q"><span class="q__id">B4</span><div><p class="q__q">Tổng số nhân sự?</p><p class="q__why">Toàn thời gian và thời vụ</p></div></div>
+      <div class="q"><span class="q__id">B5</span><div><p class="q__q">Bao nhiêu quản lý cấp trung sẽ nộp báo cáo mỗi chu kỳ?</p><p class="q__why">Con số quyết định quy mô luồng báo cáo trong hệ thống</p></div></div>
+      <div class="q"><span class="q__id">B6</span><div><p class="q__q">Cơ cấu bộ phận thực tế?</p><p class="q__why">Danh sách 12 bộ phận trong thiết kế gốc là khung ngành khách sạn — chắc chắn không đúng thực tế</p></div></div>
+      <div class="q"><span class="q__id">B7</span><div><p class="q__q">Đang dùng phần mềm gì?</p><p class="q__why">Đặt phòng · channel manager · thu chi · chấm công · giao việc. Hay hoàn toàn thủ công / Excel / Zalo? Quyết định nguồn dữ liệu đo lường lấy được qua API hay phải nhập tay</p></div></div>
+      <div class="q"><span class="q__id">B8</span><div><p class="q__q">Tỷ trọng kênh bán?</p><p class="q__why">OTA · trực tiếp · môi giới · khách quen — mỗi kênh bao nhiêu %</p></div></div>
+      <div class="q"><span class="q__id">B9</span><div><p class="q__q">Dịch vụ đang cung cấp?</p><p class="q__why">Bếp/F&amp;B · đưa đón sân bay · nhân sự trực 24/7 · dọn phòng hằng ngày · tour · tổ chức sự kiện</p></div></div>
+    </div>
+  </div>
+
+  <div class="qgroup">
+    <div class="qgroup__head">
+      <span class="chip chip--warn"><i></i>Cần cho giai đoạn 1</span>
+      <h3>Nhóm C — Kinh tế</h3>
+    </div>
+    <div class="qgroup__body">
+      <div class="q"><span class="q__id">C10</span><div><p class="q__q">Công suất (OCC) thực tế 12 tháng gần nhất?</p><p class="q__why">Theo tháng, để thấy hình dạng mùa vụ</p></div></div>
+      <div class="q"><span class="q__id">C11</span><div><p class="q__q">Giá bán thực tế bình quân (ADR)?</p><p class="q__why"><strong>Không phải giá niêm yết.</strong> Giá công khai là 5–15 triệu đ/đêm — cần biết mức thực</p></div></div>
+      <div class="q"><span class="q__id">C12</span><div><p class="q__q">Cơ cấu chi phí?</p><p class="q__why">Nhân sự · điện nước · bảo trì · hoa hồng OTA · phí quản lý khu · marketing</p></div></div>
+      <div class="q"><span class="q__id">C13</span><div><p class="q__q">Đang lỗ hay lãi? Mục tiêu tài chính là gì?</p><p class="q__why">—</p></div></div>
+    </div>
+  </div>
+
+  <div class="qgroup">
+    <div class="qgroup__head">
+      <span class="chip chip--unk"><i></i>Cần trước khi viết SOP</span>
+      <h3>Nhóm D — Rủi ro</h3>
+    </div>
+    <div class="qgroup__body">
+      <div class="q"><span class="q__id">D14</span><div><p class="q__q">Đã từng có sự cố sạt lở, ngập, hư hại do mưa bão chưa?</p><p class="q__why">Nếu có: khi nào, mức độ, xử lý thế nào</p></div></div>
+      <div class="q"><span class="q__id">D15</span><div><p class="q__q">Ràng buộc với ban quản lý khu?</p><p class="q__why">Phí quản lý · quy chế nội khu có hạn chế cho thuê ngắn ngày không · tiện ích chung nào được dùng</p></div></div>
+      <div class="q"><span class="q__id">D16</span><div><p class="q__q">Tình trạng bảo hiểm?</p><p class="q__why">Bảo hiểm tài sản và bảo hiểm trách nhiệm với khách — mức nào</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 11 ══════════════════ -->
+<section id="s11">
+  <div class="sec-head"><span class="sec-head__num">11</span><h2>Hàm ý cho hệ thống RMA</h2></div>
+  <p>
+    Thiết kế gốc được viết trước khi có bối cảnh cụ thể nên dùng khung chuẩn ngành khách sạn.
+    Sau nghiên cứu, nhiều giả định không khớp thực tế. Các điều chỉnh dưới đây
+    <strong>chưa được áp dụng</strong> — chờ trả lời nhóm câu hỏi A trước.
+  </p>
+
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 11.1</b> — Đối chiếu giả định thiết kế với thực tế quan sát được</caption>
+      <thead><tr><th class="num">#</th><th>Giả định gốc</th><th>Thực tế</th><th>Điều chỉnh đề xuất</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td>12 bộ phận có leader riêng</td><td>Đội &lt;40 người</td><td>Rút gọn còn <strong>4–6 bộ phận</strong>; chấp nhận leader kiêm nhiệm</td></tr>
+        <tr><td class="num">2</td><td>Dữ liệu đo lường lấy qua API từ PMS/POS</td><td>Không có PMS trung tâm</td><td><strong>Nhập tay / import Excel là đường chính</strong>, API là tuỳ chọn</td></tr>
+        <tr><td class="num">3</td><td>Bộ chỉ số khách sạn đầy đủ (GOPPAR, F&amp;B capture, CPOR)</td><td>Mô hình villa không có phần lớn chỉ số này</td><td>Thu gọn: OCC · ADR · RevPAR/căn · doanh thu ròng/căn · chi phí/đêm · số review · điểm review</td></tr>
+        <tr><td class="num">4</td><td>Chu kỳ báo cáo tuần + tháng</td><td>Quy mô nhỏ, tuần có thể quá dày</td><td><strong>Tháng làm chu kỳ chính</strong>; tuần chỉ cho vận hành</td></tr>
+        <tr><td class="num">5</td><td>—</td><td><strong>Rủi ro sạt lở có thật</strong></td><td>Bổ sung SOP kiểm tra thiên tai, tần suất tăng mùa mưa 9–12</td></tr>
+        <tr><td class="num">6</td><td>—</td><td><strong>Chỉ 6 review trên OTA</strong></td><td>Chỉ số giai đoạn đầu là <strong>tăng số lượng review</strong></td></tr>
+        <tr><td class="num">7</td><td>—</td><td><strong>Phân phối online yếu</strong></td><td>Đưa “mở rộng kênh phân phối” vào danh mục sáng kiến ưu tiên sớm</td></tr>
+        <tr><td class="num">8</td><td>—</td><td>Tiện ích chung do chủ đầu tư quản</td><td>Thêm loại quan sát cho hạ tầng <strong>ngoài tầm kiểm soát</strong> để phản ánh lên ban quản lý khu</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Ba sáng kiến đề xuất ưu tiên</h3>
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 11.2</b> — Đề xuất từ dữ liệu công khai <span class="lb lb--i">Suy luận</span> — chưa đối chiếu quan sát thực địa</caption>
+      <thead><tr><th>Sáng kiến</th><th>Luận điểm</th><th>Cách đo</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Mở rộng &amp; chuẩn hoá kênh phân phối</strong></td><td>Điểm review 9,8 nhưng chỉ 6 review → sản phẩm tốt, phân phối yếu</td><td>Số listing · số review/tháng · % doanh thu từ OTA</td></tr>
+        <tr><td><strong>Chiến lược lấp mùa thấp</strong></td><td>Cao điểm Tết ~82% nhưng không biết mùa thấp; đây là chỗ quyết định lợi nhuận năm</td><td>OCC tháng thấp nhất · RevPAR cả năm</td></tr>
+        <tr><td><strong>Chương trình an toàn sườn núi</strong></td><td>Rủi ro sạt lở có thật, hậu quả nghiêm trọng</td><td>Số lần kiểm tra đúng lịch · số sự cố · thời gian xử lý</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>SOP nên viết trước, theo thứ tự ưu tiên</h3>
+  <ol>
+    <li><strong>Kiểm tra an toàn sườn núi &amp; thoát nước</strong> — mùa mưa (rủi ro cao nhất)</li>
+    <li><strong>Check-in / check-out villa</strong> — điểm chạm quan trọng nhất với khách</li>
+    <li><strong>Dọn dẹp &amp; bàn giao giữa hai lượt khách</strong> — ảnh hưởng trực tiếp điểm “Sạch sẽ”</li>
+    <li><strong>Xin review sau lưu trú</strong> — đòn bẩy rẻ nhất cho vấn đề ở mục 08</li>
+    <li><strong>Bảo trì định kỳ hồ bơi &amp; thiết bị</strong> — chi phí lớn, dễ bị bỏ sót</li>
+  </ol>
+
+  <div class="callout">
+    <span class="callout__label">Bước tiếp theo</span>
+    <ol style="margin-bottom:0">
+      <li>Trả lời nhóm A — xác định phạm vi</li>
+      <li>Cập nhật thiết kế theo bảng đối chiếu 11.1</li>
+      <li>Đi thực địa lập danh sách tiện ích <em>đang hoạt động</em> vs <em>chưa có</em></li>
+      <li>Thu thập dữ liệu OCC / ADR / chi phí 12 tháng</li>
+      <li>Bắt đầu giai đoạn 1</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══════════════════ 12 ══════════════════ -->
+<section id="s12">
+  <div class="sec-head"><span class="sec-head__num">12</span><h2>Nguồn &amp; phương pháp</h2></div>
+
+  <h3>Phương pháp gắn nhãn độ tin cậy</h3>
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 12.1</b> — Bốn nhãn dùng xuyên suốt báo cáo</caption>
+      <thead><tr><th>Nhãn</th><th>Ý nghĩa</th></tr></thead>
+      <tbody>
+        <tr><td><span class="lb lb--v">Xác minh</span></td><td>Nhiều nguồn độc lập khớp nhau</td></tr>
+        <tr><td><span class="lb lb--s">Một nguồn</span></td><td>Chỉ tìm thấy ở một nguồn — chưa đối chứng</td></tr>
+        <tr><td><span class="lb lb--m">Marketing</span></td><td>Lấy từ tài liệu bán hàng, có thể thổi phồng</td></tr>
+        <tr><td><span class="lb lb--i">Suy luận</span></td><td>Do phân tích rút ra, chưa xác thực</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Nguyên tắc: <strong>không bao giờ trộn thông tin đã xác minh với thông tin marketing
+    hay suy đoán.</strong> Đây cũng chính là nguyên tắc <em>provenance</em> mà hệ thống RMA
+    được thiết kế để thực thi.
+  </p>
+
+  <h3>Đánh giá độ tin cậy tổng thể</h3>
+  <div class="tw">
+    <table>
+      <caption><b>Bảng 12.2</b> — Độ tin cậy theo nhóm thông tin</caption>
+      <thead><tr><th>Nhóm thông tin</th><th>Độ tin cậy</th><th>Lý do</th></tr></thead>
+      <tbody>
+        <tr><td>Quy mô, diện tích, số căn</td><td><span class="chip chip--unk"><i style="background:var(--st-good)"></i>Cao</span></td><td>Nhiều nguồn khớp nhau, có gốc từ hồ sơ dự án</td></tr>
+        <tr><td>Dòng thời gian &amp; pháp lý</td><td><span class="chip chip--unk"><i style="background:var(--st-good)"></i>Cao</span></td><td>Báo chí chính thống, dẫn văn bản và ngày tháng cụ thể</td></tr>
+        <tr><td>Tài chính chủ đầu tư</td><td><span class="chip chip--ser"><i></i>Trung bình</span></td><td>Chỉ một nguồn; dữ liệu dừng ở 2020</td></tr>
+        <tr><td>Giá thuê &amp; giá bán</td><td><span class="chip chip--crit"><i></i>Thấp</span></td><td>Giá niêm yết trên sàn môi giới, nguồn mâu thuẫn</td></tr>
+        <tr><td>Tiện ích</td><td><span class="chip chip--crit"><i></i>Thấp</span></td><td>Trộn lẫn cái đã có và cái trong quy hoạch</td></tr>
+        <tr><td>Mô hình vận hành</td><td><span class="chip chip--ser"><i></i>Trung bình–cao</span></td><td>Suy ra từ nhiều dấu hiệu nhất quán, chưa có xác nhận nội bộ</td></tr>
+        <tr><td>Thị trường Khánh Hoà</td><td><span class="chip chip--unk"><i style="background:var(--st-good)"></i>Cao</span></td><td>Nguồn cơ quan nhà nước</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Danh mục nguồn</h3>
+
+  <h4>Chủ đầu tư &amp; dự án</h4>
+  <ol class="reflist">
+    <li id="r1"><span class="reflist__src">Công ty TNHH Anh Nguyễn — Nha Trang Ocean Front Villas</span>
+      <a href="https://anhnguyen.vn/en/nha-trang-ocean-front-villas/">anhnguyen.vn/en/nha-trang-ocean-front-villas/</a>
+      <span class="reflist__use">Dùng cho: quy mô ba phân khu, diện tích, thông số kỹ thuật (mục 01, 04)</span></li>
+    <li id="r2"><span class="reflist__src">Anh Nguyen Oceanfront Villas — website thương hiệu 2026</span>
+      <a href="https://anhnguyenoceanfrontvillas.com/en/">anhnguyenoceanfrontvillas.com/en/</a>
+      <span class="reflist__use">Dùng cho: định vị mới, dòng sản phẩm, tiện ích, địa chỉ sau sáp nhập (mục 01, 04, 05)</span></li>
+    <li id="r3"><span class="reflist__src">CafeLand — Khu du lịch nghỉ dưỡng Anh Nguyễn Ocean Front Villas</span>
+      <a href="https://cafeland.vn/du-an/khu-du-lich-nghi-duong-anh-nguyen-ocean-front-villas-nha-trang-2687.html">cafeland.vn/du-an/…-2687.html</a>
+      <span class="reflist__use">Dùng cho: thông số dự án, giá bán, tình trạng pháp lý (mục 01, 04, 05, 07)</span></li>
+    <li id="r4"><span class="reflist__src">Dân trí — Anh Nguyen Oceanfront Villas: Định hình BĐS nghỉ dưỡng biển tại Nha Trang (22/06/2026)</span>
+      <a href="https://dantri.com.vn/bat-dong-san/anh-nguyen-oceanfront-villas-dinh-hinh-bat-dong-san-nghi-duong-bien-tai-nha-trang-20260622193046127.htm">dantri.com.vn/bat-dong-san/…</a>
+      <span class="reflist__use">Dùng cho: tái định vị thương hiệu 2026, mật độ xây dựng (mục 01, 03)</span></li>
+  </ol>
+
+  <h4>Pháp lý, tài chính &amp; rủi ro</h4>
+  <ol class="reflist" start="5" style="counter-reset:r 4">
+    <li id="r5"><span class="reflist__src">Báo Đầu tư — Liên tục điều chỉnh quy hoạch và gia hạn tiến độ</span>
+      <a href="https://baodautu.vn/du-an-khu-biet-thu-bien-va-dich-vu-du-lich-anh-nguyen-lien-tuc-dieu-chinh-quy-hoach-va-gia-han-tien-do-d160514.html">baodautu.vn/…-d160514.html</a>
+      <span class="reflist__use"><strong>Nguồn chính cho dòng thời gian</strong> (mục 03, 05)</span></li>
+    <li id="r6"><span class="reflist__src">Báo Xây dựng — Nằm ở khu có nguy cơ sạt lở, chủ đầu tư bết bát</span>
+      <a href="https://batdongsan.baoxaydung.vn/anh-nguyen-ocean-front-villas-nam-o-khu-co-nguy-co-sat-lo-chu-dau-tu-bet-bat-1926868339164.htm">batdongsan.baoxaydung.vn/…</a>
+      <span class="reflist__use"><strong>Nguồn duy nhất cho số liệu tài chính 2016–2020</strong> (mục 02)</span></li>
+    <li id="r7"><span class="reflist__src">Sở TN&amp;MT kiến nghị xử phạt Công ty TNHH Anh Nguyễn (01/2022)</span>
+      <a href="https://nnmt.net.vn/so-tai-nguyen-va-moi-truong-kien-nghi-xu-phat-cong-ty-tnhh-anh-nguyen">nnmt.net.vn/so-tai-nguyen-va-moi-truong-kien-nghi-xu-phat…</a>
+      <span class="reflist__use">Dùng cho: vi phạm khai thác 40.000 m³ đất đá (mục 03, 05)</span></li>
+    <li id="r8"><span class="reflist__src">CafeF — Bất thường từ dự án bất động sản Nha Trang (21/10/2021)</span>
+      <a href="https://cafef.vn/bat-thuong-tu-du-an-bat-dong-san-nha-trang-2021102110015222.chn">cafef.vn/bat-thuong-tu-du-an-bat-dong-san-nha-trang-…chn</a>
+      <span class="reflist__use">Dùng cho: bán hàng khi chưa đủ pháp lý, đất rừng phòng hộ, tiền lệ sạt lở 2018 (mục 03, 05)</span></li>
+    <li id="r9"><span class="reflist__src">Lao Động — Điều chỉnh tiến độ dự án nằm ở khu vực dễ sạt lở</span>
+      <a href="https://laodong.vn/bat-dong-san/dieu-chinh-tien-do-du-an-ocean-front-villas-nam-o-khu-vuc-de-sat-lo-968984.ldo">laodong.vn/bat-dong-san/…-968984.ldo</a>
+      <span class="reflist__use">Dùng cho: nguy cơ sạt lở, gia hạn tiến độ (mục 03, 05)</span></li>
+    <li id="r10"><span class="reflist__src">Lao Động — Đào núi xây biệt thự rồi điều chỉnh phân lô bán nền</span>
+      <a href="https://laodong.vn/bat-dong-san/dao-nui-xay-biet-thu-ocean-front-villas-roi-dieu-chinh-phan-lo-ban-nen-970503.ldo">laodong.vn/bat-dong-san/…-970503.ldo</a>
+      <span class="reflist__use">Dùng cho: điều chỉnh quy hoạch, phân lô (mục 03)</span></li>
+    <li id="r11"><span class="reflist__src">Tin nhanh Chứng khoán — Dự án khoét núi làm biệt thự lại xin mở rộng</span>
+      <a href="https://www.tinnhanhchungkhoan.vn/nha-trang-du-an-khoet-nui-lam-biet-thu-lai-xin-mo-rong-post283760.html">tinnhanhchungkhoan.vn/…-post283760.html</a>
+      <span class="reflist__use">Dùng cho: xin mở rộng quy mô 2021 (mục 03)</span></li>
+  </ol>
+
+  <h4>Vận hành cho thuê &amp; OTA</h4>
+  <ol class="reflist" start="12" style="counter-reset:r 11">
+    <li id="r12"><span class="reflist__src">anhnguyenvillas.com — Ocean front villas Nha Trang</span>
+      <a href="https://anhnguyenvillas.com/">anhnguyenvillas.com</a>
+      <span class="reflist__use"><strong>Đầu mối cho thuê 14 căn — bằng chứng chính cho mô hình phân mảnh</strong> (mục 01, 04, 06)</span></li>
+    <li id="r13"><span class="reflist__src">Booking.com — Anh Nguyen Oceanfront Luxury Villas Nha Trang</span>
+      <a href="https://www.booking.com/hotel/vn/anh-nguyen-oceanfront-luxury-villas-nha-trang.html">booking.com/hotel/vn/anh-nguyen-oceanfront-luxury-villas-nha-trang.html</a>
+      <span class="reflist__use">Dùng cho: listing riêng lẻ, điểm đánh giá (mục 06, 08)</span></li>
+    <li id="r14"><span class="reflist__src">Booking.com — Nha Trang Oceanfront Luxury Villa Anh Nguyen (đánh giá)</span>
+      <a href="https://www.booking.com/reviews/vn/hotel/nha-trang-oceanfront-luxury-villa-anh-nguyen.html">booking.com/reviews/vn/hotel/nha-trang-oceanfront-luxury-villa-anh-nguyen.html</a>
+      <span class="reflist__use"><strong>Điểm 9,8/10 với 6 review, điểm thành phần</strong> (mục 00, 08)</span></li>
+    <li id="r15"><span class="reflist__src">Crystal Bay — Khu biệt thự Anh Nguyễn: Chốn đi về của giới siêu giàu</span>
+      <a href="https://crystalbay.com/khu-biet-thu-anh-nguyen-nha-trang-chon-di-ve-cua-gioi-sieu-giau-n52752.html">crystalbay.com/…-n52752.html</a>
+      <span class="reflist__use">Dùng cho: định vị thị trường, giá bán, giá thuê tháng, tiện ích (mục 04, 07)</span></li>
+    <li id="r16"><span class="reflist__src">thuevilla.com — Biệt thự Anh Nguyễn Nha Trang cho thuê</span>
+      <a href="https://thuevilla.com/biet-thu/biet-thu-anh-nguyen-nha-trang-ocean-front-villas/">thuevilla.com/biet-thu/biet-thu-anh-nguyen-nha-trang-ocean-front-villas/</a>
+      <span class="reflist__use">Dùng cho: giá thuê đêm niêm yết (mục 01, 06, 07)</span></li>
+  </ol>
+
+  <h4>Thị trường Khánh Hoà</h4>
+  <ol class="reflist" start="17" style="counter-reset:r 16">
+    <li id="r17"><span class="reflist__src">Báo Khánh Hoà — Du lịch Khánh Hoà 2025 đạt doanh thu ~66,7 nghìn tỷ đồng</span>
+      <a href="https://baokhanhhoa.vn/du-lich/202512/du-lich-khanh-hoa-nam-2025-dat-doanh-thu-khoang-667-nghin-ty-dong-cc45997/">baokhanhhoa.vn/du-lich/202512/…-cc45997/</a>
+      <span class="reflist__use">Dùng cho: doanh thu, nguồn cung lưu trú, thương hiệu quốc tế (mục 00, 06, 09)</span></li>
+    <li id="r18"><span class="reflist__src">Bộ VHTTDL — Khánh Hoà đón 16,4 triệu lượt khách năm 2025</span>
+      <a href="https://bvhttdl.gov.vn/khanh-hoa-don-164-trieu-luot-khach-du-lich-trong-nam-2025-20251225091707833.htm">bvhttdl.gov.vn/khanh-hoa-don-164-trieu-luot-khach-du-lich-trong-nam-2025-…</a>
+      <span class="reflist__use">Dùng cho: lượt khách 2025 (mục 00, 09)</span></li>
+    <li id="r19"><span class="reflist__src">Bộ VHTTDL — Khánh Hoà đặt mục tiêu đón 11,8 triệu lượt khách năm 2025</span>
+      <a href="https://bvhttdl.gov.vn/khanh-hoa-dat-muc-tieu-don-118-trieu-luot-khach-nam-2025-20250107075057686.htm">bvhttdl.gov.vn/khanh-hoa-dat-muc-tieu-don-118-trieu-luot-khach-nam-2025-…</a>
+      <span class="reflist__use">Dùng cho: mục tiêu đầu năm để so với thực tế (mục 09)</span></li>
+  </ol>
+
+  <h4>Nguồn đã thử nhưng không lấy được</h4>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Nguồn</th><th>Vấn đề</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">booking.com/hotel/vn/anh-nguyen-oceanfront-luxury-villas-nha-trang.html</td><td>Chặn truy cập tự động — chỉ lấy được qua kết quả tìm kiếm</td></tr>
+        <tr><td class="mono">villanhatrang.com</td><td>Tên miền đã hết hạn</td></tr>
+        <tr><td class="mono">thuevilla.com</td><td>Chứng chỉ SSL hết hạn (truy cập trực tiếp)</td></tr>
+        <tr><td class="mono">anhnguyen.vn</td><td>Trang chủ từ chối kết nối</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="footnote">
+    Báo cáo lập ngày 11/08/2026 từ nguồn công khai. Chưa có thông tin nội bộ từ phía vận hành.
+    Thông tin thị trường và pháp lý hết hạn nhanh — quá 6 tháng nên tra cứu lại.
+    Bảng màu biểu đồ được kiểm định bằng công cụ validator cho cả chế độ sáng và tối,
+    đạt toàn bộ ngưỡng về độ tương phản và khả năng phân biệt với người mù màu.
+  </p>
+</section>
+
+</main>
+</div>
+
+
