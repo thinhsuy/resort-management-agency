@@ -1,7 +1,6 @@
 # documents/
 
-Hồ sơ bối cảnh nghiệp vụ về **Anh Nguyễn Ocean Front Villas, Nha Trang** — đối tượng
-mà hệ thống RMA sẽ quản lý.
+Hồ sơ bối cảnh nghiệp vụ về **hai cơ sở** trong danh mục quản lý.
 
 Đây là nơi lưu **thông tin nền về doanh nghiệp**. Tài liệu kỹ thuật, ADR và định nghĩa KPI
 sẽ nằm trong các thư mục con của chính `documents/` khi bắt đầu code.
@@ -10,27 +9,29 @@ sẽ nằm trong các thư mục con của chính `documents/` khi bắt đầu 
 > GitHub Pages phục vụ ra internet, được sinh tự động bởi `scripts/build-site.py`.
 > Bất cứ file nào đặt vào `docs/` đều thành công khai.
 
-**Ngày tra cứu: 11/08/2026.** Toàn bộ dựa trên nguồn công khai. Chưa có thông tin nội bộ.
+---
+
+## Hai cơ sở
+
+| Cơ sở | Vị trí | Bản chất | Hồ sơ |
+|---|---|---|---|
+| **Anh Nguyễn Ocean Front Villas** | Nha Trang, Khánh Hoà | Dự án BĐS 79 biệt thự, vận hành phân mảnh | [→ hồ sơ](anh-nguyen-oceanfront/00-tom-tat-dieu-hanh.md) |
+| **Jiva Hoa Lu Retreat** | Hoa Lư, Ninh Bình | Resort 63 phòng, vận hành tập trung, SLH | [→ hồ sơ](jiva-hoa-lu/README.md) |
+
+### ⭐ [So sánh hai resort](so-sanh-hai-resort.md)
+
+Bảng đối chiếu, mùa vụ lệch nhau, và ba thay đổi kiến trúc bắt buộc cho hệ thống RMA.
+**Đọc file này nếu chỉ có thời gian đọc một file.**
 
 ---
 
-## Mục lục
+## Báo cáo trình bày
 
-| # | Tài liệu | Nội dung |
-|---|---|---|
-| 00 | [Tóm tắt điều hành](00-tom-tat-dieu-hanh.md) | **Đọc file này trước.** Ba phát hiện quan trọng nhất |
-| 01 | [Định danh & vị trí](01-dinh-danh-vi-tri.md) | Tên, địa chỉ, quy mô đất, bản đồ các website dễ nhầm lẫn |
-| 02 | [Chủ đầu tư](02-chu-dau-tu.md) | Công ty TNHH Anh Nguyễn: sở hữu, tài chính 2016–2020 |
-| 03 | [Lịch sử dự án](03-lich-su-du-an.md) | Dòng thời gian 2005 → 2027, các lần điều chỉnh quy hoạch |
-| 04 | [Quy mô & sản phẩm](04-quy-mo-san-pham.md) | 3 phân khu, 79 biệt thự, cấu hình, tiện ích |
-| 05 | [Pháp lý & rủi ro](05-phap-ly-rui-ro.md) | Sạt lở, đất rừng phòng hộ, vi phạm khoáng sản, mâu thuẫn về sổ |
-| 06 | [Mô hình vận hành](06-mo-hinh-van-hanh.md) | **Quan trọng.** Cho thuê phân mảnh, không có PMS trung tâm |
-| 07 | [Kinh tế vận hành](07-kinh-te-van-hanh.md) | Giá thuê, giá bán, ước tính doanh thu |
-| 08 | [OTA & đánh giá khách](08-ota-danh-gia-khach.md) | Điểm 9,8/10 nhưng chỉ 6 review |
-| 09 | [Thị trường Khánh Hoà](09-thi-truong-khanh-hoa.md) | Số liệu du lịch 2025, cạnh tranh, tính mùa vụ |
-| 10 | [Khoảng trống thông tin](10-khoang-trong-thong-tin.md) | **14 câu hỏi cần chủ dự án trả lời** |
-| 11 | [Hàm ý cho hệ thống RMA](11-ham-y-cho-he-thong.md) | Điều chỉnh đề xuất so với README gốc |
-| 12 | [Nguồn tham khảo](12-nguon-tham-khao.md) | Toàn bộ link nguồn |
+| File | Nội dung |
+|---|---|
+| [bao-cao-boi-canh.html](bao-cao-boi-canh.html) | Báo cáo HTML có tab chuyển đổi giữa hai resort + tab so sánh. Nguồn để sinh trang GitHub Pages |
+
+Sửa file HTML xong, chạy `python3 scripts/build-site.py` để cập nhật `docs/index.html`.
 
 ---
 
@@ -54,16 +55,17 @@ không bao giờ trộn thông tin đã xác minh với thông tin marketing hay
 
 - Mỗi tài liệu ghi rõ **ngày tra cứu** ở đầu file. Thông tin thị trường và pháp lý
   hết hạn nhanh — quá 6 tháng thì coi là cần tra lại.
-- Một chủ đề = một file. Không gom nhiều chủ đề vào một tài liệu.
-- Khi có thông tin nội bộ từ phía vận hành, **tạo file mới** (đánh số từ 20 trở đi)
-  thay vì sửa đè lên các file nghiên cứu công khai này.
+- Một chủ đề = một file. Một cơ sở = một thư mục.
+- Khi có thông tin nội bộ, **tạo file mới** `20-thong-tin-noi-bo.md` trong thư mục
+  của cơ sở đó, thay vì sửa đè lên các file nghiên cứu công khai (00–12).
 
 ---
 
 ## Trạng thái
 
-| Nhóm | Trạng thái |
-|---|---|
-| Thông tin công khai | ✅ Đã thu thập (file 01–09) |
-| Thông tin nội bộ vận hành | ❌ Chưa có — xem [file 10](10-khoang-trong-thong-tin.md) |
-| Phạm vi quản lý thực tế | ❌ **Chưa xác nhận** — đây là câu hỏi chặn |
+| Nhóm | Anh Nguyễn | Jiva |
+|---|---|---|
+| Thông tin công khai | ✅ Đã thu thập | ✅ Đã thu thập |
+| Chủ sở hữu & tài chính | ✅ Có (báo chí) | ❌ Không công khai |
+| Thông tin nội bộ vận hành | ❌ Chưa có | ❌ Chưa có |
+| Câu hỏi chặn | **Phạm vi quản lý** | **Vai trò của bạn + có PMS không** |
